@@ -9,48 +9,9 @@
     {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}"> {% endblock %} {% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function() {
-            let searchRequest = null;
-            $("#search").keyup(function() {
-                let minlength = 1;
-                let that = this;
-                let value = $(this).val();
-                let entitySelector = $('entitiesNav').html('');
-                if (value.length >= minlength) {
-                    if (searchRequest != null) {
-                        searchRequest.abort();
-                        searchRequest = $.ajax({
-                            type: "GET",
-                            url: "{{path('searchPosts')}}",
-                            data: {
-                                'q': value
-                            },
-                            dataType: "text",
-                            success: function(msg) {
-                                if (value === $(taht).val()) {
-                                    let result = JSON.parse(msg);
-                                    $.each(result, function(key, arr) {
-                                        $.each(arr, function(id, value) {
-                                            if (key === 'posts') {
-                                                if (id !== 'error') {
-                                                    console.log(value[1]);
-                                                    entitySelector.append('<li><b>' + value[1] + '</b><a href="' + id + '"> </a></li>');
-                                                } else {
-                                                    entitySelector.append('li class="errorLi">' + value + '</li>');
-                                                }
-                                            }
-                                        });
-                                    });
-                                }
-                            }
-                        });
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="{{ asset('js/searchAdvertisement.js') }}"></script>
+
     {% endblock %}
 </head>
 
@@ -60,23 +21,30 @@
             <a class="navbar-brand space-brand">       
                 Flea┌(ಠ_ಠ)┘market</a>
         </div>
-        {# //search field #}
+        {# searchAdvertisement field #}
         <div class="input-group">
-            <input id="search" type="text" minlength="1" placeholder="Search here" name="search">
+            <input id="search" type="text" autocomplete="off" placeholder="Search here" name="search">
+            <ul id="searchAdvertisement_result" ></ul>
         </div>
+        {# searchAdvertisement field #}
 
-        {# search field #}
-        <input type="text" id="place" placeholder="Enter place">
+        {# searchLocation_result field #}
+        <div class="input-group">
+            <input type="text" id="place" placeholder="Enter place">
+            <ul id="searchLocation_result" ></ul>
+        </div>
+        {# searchLocation_result field #}
+
         <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a class="active" href="">Home</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">About</a></li>
         </ul>
 
-        <div>
-            <button class="login-btn">Sign in </button>
 
+            <button class="login-btn">Sign in </button>
+        </div>
 
 
 </body>

@@ -32,6 +32,7 @@ body {
 }
 
 .nav li a {
+
     display: block;
     color: white;
     text-align: center;
@@ -45,9 +46,43 @@ body {
 }
 
 .nav .login-btn {
+    color: #FFFFFF;
     padding: 10px 20px;
-    border: 1px solid aqua;
+    border: 1px solid #0cb5c7;
     border-radius: 20px;
-    background-color: aqua;
+    background-color: #0cb5c7;
     font-size: 16px
+}
+.login-btn:hover{
+    cursor: pointer;
+    border: 1px solid #2edff2;
+    background-color: #2edff2;
+}
+.nav .input-group{
+    width: 300px;
+}
+.nav .input-group input{
+   width:100%;
+    font-size: 15px;
+    padding: 5px;
+    height: 20px;
+
+}
+.nav #searchAdvertisement_result{
+
+    position: absolute;
+    top: 65px;
+    display: flex;
+    flex-direction: column;
+    background-color:#ffffff;
+    width: 315px;
+    overflow-y: scroll;
+}
+.nav #searchAdvertisement_result li{
+    padding:10px;
+}
+
+.nav #searchAdvertisement_result li:hover{
+    background-color: #e1f1f2;
+    padding-left:12px;
 }
