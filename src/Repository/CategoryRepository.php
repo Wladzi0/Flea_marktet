@@ -47,14 +47,15 @@ class CategoryRepository extends ServiceEntityRepository
         ;
     }
     */
-    public function findEntityByString($chars){
+    public function findEntityByString($chars)
+    {
         return $this->getEntityManager()
             ->createQuery(
                 'SELECT c
                 FROM App\Entity\Category c
                 WHERE c.name LIKE :chars'
             )
-            ->setParameter('chars','%'.$chars.'%')
+            ->setParameter('chars', '%' . $chars . '%')
             ->setMaxResults(20)
             ->getResult();
 

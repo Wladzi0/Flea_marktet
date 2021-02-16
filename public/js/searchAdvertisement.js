@@ -20,9 +20,10 @@ $(document).ready(function() {
                                     if (key === 'posts') {
                                         if (id !== 'error') {
                                             entitySelector.append('<li><b>' + searchString[0] +'</li>');
-                                        } else {
-                                            entitySelector.append('<li class="errorLi">' + searchString + '</li>');
                                         }
+                                        // else {
+                                        //     entitySelector.append('<li class="errorLi">' + searchString + '</li>');
+                                        // }
                                     }
                                 });
                             });

@@ -1,88 +1,312 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
 body {
     box-sizing: border-box;
     background-color: #24252A;
 }
 
-.nav {
-    align-items: center;
+nav {
     display: flex;
     justify-content: space-between;
-    margin: 0;
-    padding: 15px 5%;
+    padding-top: 10px;
+    height: 70px;
+    width: 100%;
 }
 
-.nav .logo {
+nav .logo {
+    margin-left: 60px;
+    margin-right: 30px;
     color: #fff;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: 23px;
+    font-size: 30px;
+    padding: 10px;
 }
 
-.nav ul {
+nav .links {
+    margin-left: -60px;
+    margin-top: 10px;
+    display: flex;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
     background-color: #24252A;
 }
 
-.nav li {
-    float: left;
-}
-
-.nav li a {
-
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+nav .links li a {
+    width: 60px;
+    margin-right: 10px;
+    height: 20px;
+    color: #ffffff;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
     text-decoration: none;
 }
 
-.nav li a:hover {
+nav .links li a:hover {
     background-color: #509FC7;
     border-radius: 2px;
 }
 
-.nav .login-btn {
+nav #signInIcon {
+    display: none;
+}
+
+nav .login-btn {
+    margin-top: 10px;
+    position: relative;
+    right: 30px;
     color: #FFFFFF;
-    padding: 10px 20px;
+    width: 90px;
+    height: 37px;
+    align-items: center;
     border: 1px solid #0cb5c7;
-    border-radius: 20px;
+    border-radius: 3px;
     background-color: #0cb5c7;
     font-size: 16px
 }
-.login-btn:hover{
+
+nav .login-btn:hover {
     cursor: pointer;
     border: 1px solid #2edff2;
     background-color: #2edff2;
 }
-.nav .input-group{
+
+nav .input-group {
     width: 300px;
 }
-.nav .input-group input{
-   width:100%;
+
+nav .left-input {
+    margin-right: 30px;
+}
+
+nav .input-group input {
+
+    margin-top: 10px;
+    width: 298px;
     font-size: 15px;
     padding: 5px;
     height: 20px;
 
 }
-.nav #searchAdvertisement_result{
 
+nav #searchAdvertisement_result {
     position: absolute;
-    top: 65px;
-    display: flex;
+    top: 52px;
     flex-direction: column;
-    background-color:#ffffff;
-    width: 315px;
+    background-color: #ffffff;
+    width: 271px;
+    margin-left: 0;
     overflow-y: scroll;
 }
-.nav #searchAdvertisement_result li{
-    padding:10px;
+
+nav #searchAdvertisement_result li {
+    padding: 10px;
+    margin-left: -40px;
+
 }
 
-.nav #searchAdvertisement_result li:hover{
+nav #searchAdvertisement_result li:hover {
     background-color: #e1f1f2;
-    padding-left:12px;
+
+    padding-left: 12px;
+}
+
+nav .hamburger-menu {
+    display: none;
+    flex-direction: column;
+
+    justify-content: space-around;
+    position: fixed;
+    cursor: pointer;
+    top: 30px;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+}
+
+nav .hamburger-menu .line {
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF;
+    transition: all 0.8s;
+}
+
+nav .navbar {
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #3d3d3d;
+    display: none;
+    transition: right .8s cubic-bezier(0.5, 0.5, 0, 1);
+
+}
+
+nav .change {
+    right: 0;
+}
+
+nav .cross .line-1 {
+    transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+
+nav .cross .line-2 {
+    opacity: 0;
+}
+
+nav .cross .line-3 {
+    transform: rotateZ(405deg) translate(-8px, -6px);
+}
+
+
+@media (max-width: 1470px) {
+    nav .logo {
+        margin-left: 30px;
+    }
+
+    nav .input-group {
+        width: 260px;
+    }
+
+    nav .input-group input {
+        width: 258px;
+    }
+
+    nav #searchAdvertisement_result {
+        width: 231px;
+
+    }
+}
+
+@media (max-width: 1380px) {
+    nav .logo {
+        font-size: 25px;
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+
+    nav .input-group {
+        width: 190px;
+    }
+
+    nav .input-group input {
+        width: 188px;
+    }
+
+    nav #searchAdvertisement_result {
+        width: 161px;
+    }
+
+    nav #signIn {
+        display: none;
+    }
+
+    nav #signInIcon {
+        display: flex;
+    }
+
+    nav .login-btn {
+        margin-left: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        right: 10px;
+        justify-content: center;
+        width: 50px;
+    }
+
+    nav .links {
+        margin-left: -20px;
+
+    }
+
+    nav .links li a {
+        margin-right: 0;
+
+    }
+}
+
+@media (max-width: 1024px) {
+    nav {
+        justify-content: flex-start;
+    }
+
+    nav .links {
+        display: none;
+    }
+
+    nav .login-btn {
+        position: fixed;
+        top: 20px;
+
+        right: 100px;
+        height: 30px;
+        width: 40px;
+
+
+    }
+
+    nav .hamburger-menu {
+        display: flex;
+        z-index: 100;
+    }
+
+    nav .navbar {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    nav .navbar ul {
+        margin-top: 70px;
+        width: 100px;
+        list-style-type: none;
+    }
+
+    nav .navbar ul li {
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    nav .navbar ul li a {
+        display: flex;
+        justify-content: center;
+        font-size: 17px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    nav .navbar ul li .nav-link::before, nav .navbar ul li .nav-link::after {
+        content: "";
+        height: 2px;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 0.5s;
+    }
+
+    nav .navbar ul li .nav-link::before {
+        top: 0;
+        transform-origin: right;
+    }
+
+    nav .navbar ul li .nav-link::after {
+        bottom: 0;
+        transform-origin: left;
+    }
+
+    nav .navbar ul li .nav-link:hover::before, nav .navbar ul li .nav-link:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+@media (max-width: 1024px) {
+
 }

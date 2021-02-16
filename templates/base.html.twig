@@ -3,48 +3,65 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}Flea Market{% endblock %}
     </title>
     {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}"> {% endblock %} {% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}"> {% endblock %} {% block javascripts %}
+    {% endblock %}
+    {% block javasctipts %}
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/d29cbc6cc1.js" crossorigin="anonymous"></script>
         <script src="{{ asset('js/searchAdvertisement.js') }}"></script>
-
+        <script src="{{ asset('js/hamburgerMenu.js') }}"></script>
     {% endblock %}
 </head>
 
 <body>
-    <div class="nav">
-        <div class="logo">
-            <a class="navbar-brand space-brand">       
-                Flea┌(ಠ_ಠ)┘market</a>
-        </div>
-        {# searchAdvertisement field #}
-        <div class="input-group">
-            <input id="search" type="text" autocomplete="off" placeholder="Search here" name="search">
-            <ul id="searchAdvertisement_result" ></ul>
-        </div>
-        {# searchAdvertisement field #}
+<nav>
+    <div class="logo">
+        <a class="">
+            FleaMarket</a>
+    </div>
+    {# searchAdvertisement field #}
+    <div class="input-group left-input">
+        <input id="search" type="text" autocomplete="off" placeholder="Search here" name="search">
+        <ul id="searchAdvertisement_result"></ul>
+    </div>
+    {# searchAdvertisement field #}
 
-        {# searchLocation_result field #}
-        <div class="input-group">
-            <input type="text" id="place" placeholder="Enter place">
-            <ul id="searchLocation_result" ></ul>
-        </div>
-        {# searchLocation_result field #}
+    {# searchLocation_result field #}
+    <div class="input-group">
+        <input type="text" id="place" placeholder="Enter place">
+        {# <ul id="searchLocation_result" ></ul> #}
+    </div>
+    {# searchLocation_result field #}
 
+    <ul class="links">
+        <li><a class="active" href="">Home</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">About</a></li>
+    </ul>
+    <button id="signIn" class="login-btn">Sign in</button>
+    <button id="signInIcon" class="login-btn"><i class="fas fa-sign-in-alt"></i></button>
+    <div class="hamburger-menu">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+    </div>
+    <div class="navbar">
         <ul>
-            <li><a class="active" href="">Home</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">About</a></li>
+            <li><a class="nav-link" href="">Home</a></li>
+            <li><a class="nav-link" href="">News</a></li>
+            <li><a class="nav-link" href="">Contact</a></li>
+            <li><a class="nav-link" href="">About</a></li>
         </ul>
 
-
-            <button class="login-btn">Sign in </button>
-        </div>
+    </div>
+</nav>
 
 
 </body>
