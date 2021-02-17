@@ -14,10 +14,12 @@ class StartPageController extends AbstractController
      * @Route("/", name="start_page")
      * 
      */
-    public function index(): Response
-    {   
+    public function index(Request $request): Response
+    {
+        $em=$this->getDoctrine()->getManager();
+        $categories =$em->getRepository(Category::class)->FindAll();
         return $this->render('start_page/index.html.twig', [
-            'controller_name' => 'StartPageController',
+            'categories' => $categories,
         ]);
     }
 

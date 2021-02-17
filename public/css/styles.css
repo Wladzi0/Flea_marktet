@@ -22,7 +22,9 @@ nav .logo {
     font-size: 30px;
     padding: 10px;
 }
-
+nav #searchIcon,nav #searchlocation{
+    display:none;
+}
 nav .links {
     margin-left: -60px;
     margin-top: 10px;
@@ -139,7 +141,7 @@ nav .navbar {
     right: -300px;
     width: 300px;
     height: 100%;
-    background-color: #3d3d3d;
+    background-color: #3a3b3a;
     display: none;
     transition: right .8s cubic-bezier(0.5, 0.5, 0, 1);
 
@@ -160,7 +162,38 @@ nav .cross .line-2 {
 nav .cross .line-3 {
     transform: rotateZ(405deg) translate(-8px, -6px);
 }
+.side-nav{
+    border-radius:3px;
+    border: 1px solid #FFFFFF;;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-left:40px;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    font-size:17px;
+    background-color: #FFFFFF;
+    width:300px;
+}
+.side-nav a:hover{
+    color: #34a4eb;
+    border-bottom: 1px solid #34a4eb;
+}
+.side-nav a{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border: 1px solid #FFFFFF;
+    color: #24252A;
+    text-decoration: none;
+    margin-left: 12px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.side-nav a i{
 
+    margin-right:10px;
+}
 
 @media (max-width: 1470px) {
     nav .logo {
@@ -307,6 +340,11 @@ nav .cross .line-3 {
     }
 }
 
-@media (max-width: 1024px) {
-
+@media (max-width: 800px) {
+    nav #searchIcon,nav #searchlocation{
+        display:flex;
+        margin-right: 40px;
+        font-size: 20px;
+        color: #FFFFFF;
+    }
 }

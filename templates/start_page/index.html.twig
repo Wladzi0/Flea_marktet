@@ -1,1 +1,19 @@
-{% extends 'base.html.twig' %} {% block title %}Hello StartPageController!{% endblock %} {% block body %} {% endblock %}
+{% extends 'base.html.twig' %}
+{% block title %}Hello in FleaMarket!{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/openSubcategory.js') }}"></script>
+{% endblock %}
+{% block content %}
+    <div class="side-nav">
+        {% for category in categories %}
+        <a href="{{ path('start_page', {category:category.id}) }}">
+            <i class="{{ category.icon }}"></i>
+            {{ category.name }}
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
