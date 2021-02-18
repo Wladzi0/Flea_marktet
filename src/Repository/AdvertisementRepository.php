@@ -19,32 +19,11 @@ class AdvertisementRepository extends ServiceEntityRepository
         parent::__construct($registry, Advertisement::class);
     }
 
-    // /**
-    //  * @return Advertisement[] Returns an array of Advertisement objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findPostBySubcategory($subCategory)
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $query = $this->createQueryBuilder('a')
+            ->where('a.subcategory = :subcategory')
+            ->setParameter('subcategory', $subCategory);
+        return $query->getQuery()->getResult();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Advertisement
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

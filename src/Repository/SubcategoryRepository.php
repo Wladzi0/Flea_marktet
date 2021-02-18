@@ -30,10 +30,5 @@ class SubcategoryRepository extends ServiceEntityRepository
             ->getResult();
 
     }
-//        $query=$this->createQueryBuilder('s')
-//            ->where('s.category =: category')
-//            ->setParameter('category',$category);
-//            return $query->getQuery()->getResult();
-//    }
 
 }

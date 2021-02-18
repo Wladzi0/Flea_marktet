@@ -83,17 +83,19 @@ class StartPageController extends AbstractController
     }
 
     /**
-     * @Route ("/advertisementsInSub", name="advertisementsInSub", methods={"GET"})
+     * @Route ("/advertisementsInSub/{id}", name="advertisementsInSub", methods={"GET"})
      *
      */
-    public function advertisementsInSub(Request $request){
+    public function advertisementsInSub(Request $request): Response
+    {
 
-        $advertisements=$request->get('subcategory');
-        if($advertisements){
-            $advertisements =$this->getDoctrine()->getRepository(Advertisement::class)->findPostBySubcategory($advertisements);
+             $subcategory=$request->get('id');
+
+        if($subcategory){
+            $advertisements =$this->getDoctrine()->getRepository(Advertisement::class)->findPostBySubcategory($subcategory);
         }
 
-        return $this-> render('post/index.html.twig',[
+        return $this-> render('advertisement/index.html.twig',[
             'advertisements'=>$advertisements,
         ]);
     }

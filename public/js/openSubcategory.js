@@ -1,9 +1,11 @@
 $(document).ready(function(){
     let searchByCategory=null;
-$('.subcategory-list').mouseenter(function(){
+ $('.subcategory-list').mouseenter(function(){
+
     let category= $(this).data('value');
     console.log(category);
     let fieldSubcategories=$('#searchByCategory').html('');
+    if(fieldSubcategories)
     searchByCategory= $.ajax({
         type:'GET',
         url:"/searchByCategory",
@@ -18,8 +20,10 @@ $('.subcategory-list').mouseenter(function(){
            $.each(arr,function(id,category){
               if(key === 'subcategories'){
                   if(id!== 'error'){
-                      // fieldSubcategories.append('<li class="sub-cat">' + category[0] +'</li>');
-                      fieldSubcategories.append('<a class="sub-cat" href="/advertisementsInSub/'+category[0].id+'">' + category[0] +'</a>');
+
+
+                       fieldSubcategories.append('<a class="sub-cat"  href="/advertisementsInSub/'+id+'">' + category[0] +'</a>');
+
                   }
               }
            });
@@ -27,4 +31,5 @@ $('.subcategory-list').mouseenter(function(){
         }
     });
 });
+
 });

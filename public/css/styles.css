@@ -22,6 +22,12 @@ nav .logo {
     font-size: 30px;
     padding: 10px;
 }
+nav .logo a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
 nav #searchIcon,nav #searchlocation{
     display:none;
 }
@@ -165,7 +171,7 @@ nav .cross .line-3 {
 .side-nav{
     float:left;
     border-radius:3px;
-    border: 1px solid #FFFFFF;;
+
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 40px;
@@ -174,20 +180,23 @@ nav .cross .line-3 {
     flex-direction: column;
     color: #FFFFFF;
     font-size:17px;
-    background-color: #FFFFFF;
-    width:300px;
+    background-color: #f7f7f7;
+    width:260px;
 }
 .side-nav a:hover{
+    background-color:#FFFFFF;
+    cursor: pointer;
     color: #34a4eb;
     border-bottom: 1px solid #34a4eb;
 }
+
 .side-nav a{
     padding-top: 3px;
     padding-bottom: 3px;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #f7f7f7;
     color: #24252A;
     text-decoration: none;
-    margin-left: 12px;
+    padding-left: 12px;
     margin-bottom: 5px;
     margin-top: 5px;
 }
@@ -195,15 +204,32 @@ nav .cross .line-3 {
 
     margin-right:10px;
 }
+.side-nav:hover ~ #searchByCategory{
+    display: flex;
+}
+#searchByCategory:hover {
+    display: flex;
+}
 #searchByCategory{
+    padding: 12px;
+    height:336px;
     margin-top: 40px;
     background-color:#FFFFFF;
-    display:flex;
+    display:none;
     flex-direction: column;
-    width:300px;
+    width:260px;
     border: 1px solid #FFFFFF;
     border-radius:3px;
 
+}
+#searchByCategory a{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration:none;
+    color: black;
+}
+#searchByCategory a:hover{
+    color: #34a4eb;
 }
 
 
