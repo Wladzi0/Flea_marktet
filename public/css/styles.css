@@ -163,6 +163,7 @@ nav .cross .line-3 {
     transform: rotateZ(405deg) translate(-8px, -6px);
 }
 .side-nav{
+    float:left;
     border-radius:3px;
     border: 1px solid #FFFFFF;;
     padding-top: 10px;
@@ -194,6 +195,18 @@ nav .cross .line-3 {
 
     margin-right:10px;
 }
+#searchByCategory{
+    margin-top: 40px;
+    background-color:#FFFFFF;
+    display:flex;
+    flex-direction: column;
+    width:300px;
+    border: 1px solid #FFFFFF;
+    border-radius:3px;
+
+}
+
+
 
 @media (max-width: 1470px) {
     nav .logo {

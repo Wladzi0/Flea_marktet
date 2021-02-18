@@ -19,7 +19,7 @@ $(document).ready(function() {
                                 $.each(arr, function(id, searchString) {
                                     if (key === 'posts') {
                                         if (id !== 'error') {
-                                            entitySelector.append('<li><b>' + searchString[0] +'</li>');
+                                            entitySelector.append('<li ><b>' + searchString[0] +'</li>');
                                         }
                                         // else {
                                         //     entitySelector.append('<li class="errorLi">' + searchString + '</li>');
