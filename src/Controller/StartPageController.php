@@ -35,7 +35,7 @@ class StartPageController extends AbstractController
     {
        $em= $this->getDoctrine()->getManager();
        $requestString = $request->get('search');
-       $posts= $em->getRepository(Category::class)->findEntityByString($requestString);
+       $posts= $em->getRepository(Advertisement::class)->findEntityByString($requestString);
            if(!$posts){
                $result['posts']['error']="Advertisement not found ;(";
                }

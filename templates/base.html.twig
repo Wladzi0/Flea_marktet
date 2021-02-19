@@ -17,6 +17,8 @@
         <script src="{{ asset('js/searchAdvertisement.js') }}"></script>
         <script src="{{ asset('js/hamburgerMenu.js') }}"></script>
         <script src="{{ asset('js/openSubcategory.js') }}"></script>
+        <script src="{{ asset('js/openMobSearch.js') }}"></script>
+
 
     {% endblock %}
 </head>
@@ -28,14 +30,14 @@
             FleaMarket</a>
     </div>
     {# searchAdvertisement field #}
-    <div class="input-group left-input">
+    <div  id="searchAd"  class="input-group left-input desktop">
         <input id="search" type="text" autocomplete="off" placeholder="Search here" name="search">
         <ul id="searchAdvertisement_result"></ul>
     </div>
     {# searchAdvertisement field #}
 
     {# searchLocation_result field #}
-    <div class="input-group">
+    <div id="searchLo" class="input-group desktop">
         <input type="text" id="place" placeholder="Enter place">
         {# <ul id="searchLocation_result" ></ul> #}
     </div>
@@ -64,6 +66,16 @@
             <li><a class="nav-link" href="">About</a></li>
         </ul>
 
+    </div>
+    <div class="hidden" id="searchAd-mob-version">
+        <input id="search" type="text" autocomplete="off" placeholder="Search here" name="search">
+        <ul id="searchAdvertisement_result"></ul>
+    </div>
+    <div id="searchLo-mob-version">
+        <div id="searchLo" class="input-group">
+            <input type="text" id="place" placeholder="Enter place">
+            {# <ul id="searchLocation_result" ></ul> #}
+        </div>
     </div>
 </nav>
 

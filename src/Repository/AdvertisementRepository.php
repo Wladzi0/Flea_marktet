@@ -18,7 +18,19 @@ class AdvertisementRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Advertisement::class);
     }
+    public function findEntityByString($chars)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT a
+                FROM App\Entity\Advertisement a
+                WHERE a.name LIKE :chars'
+            )
+            ->setParameter('chars', '%' . $chars . '%')
+            ->setMaxResults(20)
+            ->getResult();
 
+    }
     public function findPostBySubcategory($subCategory)
     {
         $query = $this->createQueryBuilder('a')

@@ -1,9 +1,7 @@
 $(document).ready(function(){
     let searchByCategory=null;
  $('.subcategory-list').mouseenter(function(){
-
     let category= $(this).data('value');
-    console.log(category);
     let fieldSubcategories=$('#searchByCategory').html('');
     if(fieldSubcategories)
     searchByCategory= $.ajax({

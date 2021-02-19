@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e78e18bb-872f-4146-9d99-ad2f7ff84d71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/openSubcategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/openSubcategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/searchAdvertisement.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/searchAdvertisement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/StartPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StartPageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AdvertisementsFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AdvertisementsFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/CategoriesFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/CategoriesFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/AdvertisementRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AdvertisementRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SubcategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SubcategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +190,8 @@
       <workItem from="1613391498237" duration="17919000" />
       <workItem from="1613476395167" duration="18032000" />
       <workItem from="1613565250702" duration="15173000" />
-      <workItem from="1613649154203" duration="20209000" />
+      <workItem from="1613649154203" duration="25028000" />
+      <workItem from="1613730848366" duration="12300000" />
     </task>
     <servers />
   </component>

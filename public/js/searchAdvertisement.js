@@ -21,9 +21,6 @@ $(document).ready(function() {
                                         if (id !== 'error') {
                                             entitySelector.append('<li ><b>' + searchString[0] +'</li>');
                                         }
-                                        // else {
-                                        //     entitySelector.append('<li class="errorLi">' + searchString + '</li>');
-                                        // }
                                     }
                                 });
                             });
