@@ -1,0 +1,77 @@
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Searching{% endblock %}#}
+{#{% block stylesheets %}#}
+{#    {{ parent() }}#}
+{#{% endblock %}#}
+
+{#{% block content %}#}
+
+{#    <div class="found-count">#}
+{#        {% set countResult = searchingResults | length %}#}
+{#        {% if countResult < 1 %}#}
+{#            <h2 >#}
+{#                No results found :(</h2><br>#}
+{#        {% else %}#}
+{#            <h2>#}
+{#                Found results ({{ countResult }})#}
+{#            </h2><br>#}
+{#        {% endif %}#}
+{#    </div>#}
+{#    <div class="found-field">#}
+{#        {% for result in searchingResults %}#}
+{#            <div class="card">#}
+{#                <div class="card-image">#}
+{#                    {% set mainPhoto = result.images | first %}#}
+{#                    {% if mainPhoto %}#}
+{#                        <img src="{{ asset('images/itemImages/'~ mainPhoto.name) }}"/><br>#}
+{#                    {% else %}#}
+{#                        <img src="{{ asset('images/itemImages/defaultFitst.jpg') }}"/><br>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#                <div class="card-text">#}
+{#                    <h4>#}
+{#                        {{ result.name }}</h4>#}
+
+{#                    <p>{{ result.price }}#}
+{#                        zł#}
+{#                    </p>#}
+
+{#                </div>#}
+
+{#                <span class="date-like">{{result.createdAt|date('d-m-Y')}}	<a href="{{ path('post_favourite',{'id':result.id }) }}" id="js-favourite" class=" like btn-link ">#}
+{#						{% if app.user and result.isFavouritedByUser(app.user) %}#}
+{#                            <i class="fas fa-heart"></i>#}
+{#						{% else %}#}
+{#                            <i class="far fa-heart"></i>#}
+{#                        {% endif %}#}
+{#					</a></span>#}
+{#                <a class="details" href="{{ path('post_show_det', {'id': result.id}) }}">#}
+{#                    <i class="show fas fa-eye"></i>#}
+{#                </a>#}
+
+{#                {% if app.user.id == result.user.id %}#}
+{#                    <div class="btns-user-options">#}
+{#                        <a  class="edit btn-info" href="{{ path('post_edit', {'id': result.id}) }}">#}
+{#                            <i class="fas fa-edit"></i>#}
+{#                        </a>#}
+{#                        <form method="post" action="{{ path('post_delete', {'id': result.id}) }}" onsubmit="return confirm('Are you sure you want to delete this advertisement?');">#}
+{#                            <input type="hidden" name="_method" value="DELETE">#}
+{#                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ result.id) }}">#}
+{#                            <button class="delete btn-danger">#}
+{#                                <i class="fas fa-trash-alt"></i>#}
+{#                            </button>#}
+{#                        </form>#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{#    {% block javascripts %}#}
+{#        {{ parent() }}#}
+{#        <script src="{{ asset('js/like_unlike.js') }}"></script>#}
+{#        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>#}
+
+{#    {% endblock %}#}
+
+{#{% endblock %}#}

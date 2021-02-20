@@ -179,21 +179,6 @@ class CategoriesFixtures extends Fixture
         $elEquipment->setName("Electronically equipments");
 
     //advertisements
-        $carBot= new Advertisement();
-        $carBot->setSubcategory($car);
-        $carBot->setName("BWM 520d");
-        $carBot->setDescription("Witam!\nSuzuki Jimny\n
-Rok 2008.Samochód lekko uszkodzony\nWięcej informacji pod numerem telefonu 694 - wyświetl numer - lub 519 - wyświetl numer -");
-        $carBot->setPrice('22222');
-        $carBot->setCreatedAt(new \DateTime());
-
-        $carBot2= new Advertisement();
-        $carBot2->setSubcategory($car);
-        $carBot2->setName("Audi A6 C5");
-        $carBot2->setDescription("Witam!\nSuzuki Jimny\n
-Rok 2008.Samochód lekko uszkodzony\nWięcej informacji pod numerem telefonu 694 - wyświetl numer - lub 519 - wyświetl numer -");
-        $carBot2->setPrice('22222');
-        $carBot2->setCreatedAt(new \DateTime());
 
         $manager->persist($categoryApp);
         $manager->persist($categoryTax);
@@ -244,8 +229,6 @@ Rok 2008.Samochód lekko uszkodzony\nWięcej informacji pod numerem telefonu 694
         $manager->persist($equipment);
         $manager->persist($elEquipment);
 
-        $manager->persist($carBot);
-        $manager->persist($carBot2);
 
         $manager->flush();
     }

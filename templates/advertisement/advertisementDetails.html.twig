@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Advertisement details{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container-details">
+        <div class="stick-price"><p id="price">{{ advertisement.price }} zł </p></div>
+        <div class="data">
+            <p><strong>{{ advertisement.contactName|capitalize }} </strong></p>
+             <a class="phone" href="tel: {{ advertisement.telNumber }}">{{ advertisement.telNumber }}</a>
+
+            <p>{{ advertisement.location }} </p>
+            <p>{{ advertisement.createdAt| date("m.d.Y") }} </p>
+        </div>
+        <div class="slider-inner">
+            {% for image in  advertisement.images %}
+
+                <img src="{{ asset('images/advertisementImages/'~ image.name) }}" alt="">
+
+            {% endfor %}
+        </div>
+
+        <div class="description-block">
+
+            <strong> {{ advertisement.name }}</strong>
+
+            <p>{{ advertisement.description }} </p>
+
+
+            {# <a href="{{ path('post_favourite',{'id':advertisement.id }) }}"  id="js-favourite" class=" btn btn-link "> #}
+            {# {% if app.user and advertisement.isFavouritedByUser(app.user) %} #}
+            {# <i class="fas fa-heart"></i> #}
+            {# {% else %} #}
+            {# <i class="far fa-heart"></i> #}
+            {# {% endif %} #}
+            {# </a> #}
+
+        </div>
+    </div>
+    {% block javascripts %}
+        {{ parent() }}
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        {# <script src="{{ asset('js/like_unlike.js') }}"> </script> #}
+        <script src="{{ asset('js/slick.js') }}"></script>
+        <script src="{{ asset('js/fade.js') }}"></script>
+    {% endblock %}
+
+{% endblock %}

@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}Flea Market{% endblock %}
     </title>
-    {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/styles.css') }}"> {% endblock %} {% block javascripts %}
-    {% endblock %}
-    {% block javasctipts %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block javascripts  %}
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://kit.fontawesome.com/d29cbc6cc1.js" crossorigin="anonymous"></script>
         <script src="{{ asset('js/searchAdvertisement.js') }}"></script>
         <script src="{{ asset('js/hamburgerMenu.js') }}"></script>
         <script src="{{ asset('js/openSubcategory.js') }}"></script>
         <script src="{{ asset('js/openMobSearch.js') }}"></script>
-
-
     {% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% endblock %}
+
 </head>
 
 <body>
@@ -51,6 +49,10 @@
     </ul>
     <i id="searchIcon"  class="fas fa-search"></i>
     <i id="searchlocation" class="fas fa-map-marked-alt"></i>
+    <a id="add" href="{{ path('new_advertisement') }}">
+        <i class="fas fa-plus-circle"></i>
+    </a>
+
     <button id="signIn" class="login-btn">Sign in</button>
     <button id="signInIcon" class="login-btn"><i class="fas fa-sign-in-alt"></i></button>
     <div class="hamburger-menu">
@@ -67,6 +69,7 @@
         </ul>
 
     </div>
+
     <div class="hidden" id="searchAd-mob-version">
         <input id="search" type="text" autocomplete="off" placeholder="Search here" name="search">
         <ul id="searchAdvertisement_result"></ul>
@@ -78,9 +81,43 @@
         </div>
     </div>
 </nav>
+{#<footer>#}
+{#    <div class="firstPart">#}
+{#        <p>follow us</p>#}
+{#        <div class="social-btns">#}
+{#            <a class="btn-social" href="https://www.facebook.com/" target="_blank">#}
+{#                <i class="fab fa-facebook-square"></i>#}
+{#            </a>#}
+{#            <a class="left btn-social" href="https://www.instagram.com/?hl=pl" target="_blank">#}
+{#                <i class="fab fa-instagram"></i>#}
+{#            </a>#}
+{#            <a class="left btn-social" href="https://twitter.com/twitter" target="_blank">#}
+{#                <i class="fab fa-twitter"></i>#}
+{#            </a>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="secondPart">#}
+{#        <p>contact us</p>#}
+{#        <a class="phone" href="tel: +48595555331">#}
+{#            <i class=" phoneAct fas fa-phone-alt"></i>&nbsp; +48 595 555 331</a>#}
+{#        <a class="mail" href="mailto: example@gmail.com">#}
+{#            <i class="mailAct far fa-envelope"></i><i class="mailHid far fa-envelope-open"></i>&nbsp; example@gmail.com</a>#}
+{#        <a class="help-center" id="openMessage"><i class="fas fa-headset"></i>&nbsp; Help center</a>#}
+{#        <script src="{{ asset('js/messageForm.js') }}"></script>#}
+{#    </div>#}
 
+{#    <div class="thirdPart">#}
+{#        <a href="">home#}
+{#        </a>#}
+{#        <a href="">news</a>#}
+{#        <a href="">about us</a>#}
+{#        <a href="">help center</a>#}
+{#    </div>#}
+
+{#</footer>#}
 
 </body>
+
 {% block content %} {% endblock %}
 
 </html>

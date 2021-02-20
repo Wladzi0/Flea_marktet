@@ -20,7 +20,7 @@ $(document).ready(function(){
                   if(id!== 'error'){
 
 
-                       fieldSubcategories.append('<a class="sub-cat"  href="/advertisementsInSub/'+id+'">' + category[0] +'</a>');
+                       fieldSubcategories.append('<a  href="/advertisementsInSub/'+id+'">' + category[0] +'</a>');
 
                   }
               }
