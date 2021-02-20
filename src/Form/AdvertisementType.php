@@ -22,6 +22,7 @@ class AdvertisementType extends AbstractType
                 'multiple'=>true,
                 'mapped'=>false,
 
+
             ])
             ->add('name', TextType::class,[
                 'required' => true,

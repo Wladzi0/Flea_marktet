@@ -277,11 +277,11 @@ nav .cross .line-3 {
 .container-details, .new-advertisement{
     margin: 30px auto 30px auto ;
     position: relative;
-    padding-left: 40px;
+
     padding-bottom:20px;
     font-size: 17px;
     border: 1px solid #FFFFFF;
-    width:55%;
+    width:50%;
     border-radius: 3px;
     display: flex;
     flex-direction: column;
@@ -372,8 +372,7 @@ nav .cross .line-3 {
 }
 .slider-inner{
     margin-top:40px;
-    margin-left: auto;
-    margin-right: 27%;
+    margin-left: 100px;
     width:50%;
     height:350px;
 }
@@ -679,6 +678,7 @@ nav .cross .line-3 {
         font-size: 14px;
     }
     nav .opened #search{
+        position: relative;
         width: 100%;
     }
     nav #searchAd-mob-version #searchAdvertisement_result{

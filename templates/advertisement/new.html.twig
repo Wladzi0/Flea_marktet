@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Add your advertisement {% endblock %}
+    {% block javascripts  %}
+        {{ parent() }}
+    {% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+        <script src="{{ asset('js/selectedImages_input.js') }}"></script>
+    {% endblock %}
 
 {% block content %}
     <div class="new-advertisement">
@@ -8,7 +15,9 @@
         <h2>Create new advertisement</h2>
         {{ form_start(advertisementForm, {'attr': {'class': 'form-horizontal'}}) }}
         {{ form_label(advertisementForm.image) }}
-        {{ form_widget(advertisementForm.image, {'attr': {'class': 'form-horizontal'}}) }}<br><br>
+        {{ form_widget(advertisementForm.image, {'attr': {'class': 'form-horizontal'}}) }}
+        <div  id="selectedImage"></div>
+        <br><br>
         {{ form_label(advertisementForm.name) }}
         {{ form_widget(advertisementForm.name, {'attr': {'class': 'form-control'}}) }}
         {{ form_label(advertisementForm.subcategory) }}
