@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+    {% endblock %}
+    {% block javascripts %}
+        <script src="https://kit.fontawesome.com/d29cbc6cc1.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    {% endblock %}
+</head>
+{% block body %}
+    <form class="form-signIn" method="post">
+        {% if error %}
+            <div class="alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <h1 >Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <div class="checkbox ">
+            <label>
+                <input type="checkbox" name="_remember_me">
+                Remember me
+            </label>
+        </div>
+        <button class="btn logIn " type="submit">
+            Sign in
+        </button>
+        <hr>
+        <button class="btn registration" onclick="window.location.href='/register'">
+            Create new account</button>
+
+    </form>
+{% endblock %}
+</html>

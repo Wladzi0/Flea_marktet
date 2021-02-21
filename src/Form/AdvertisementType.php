@@ -30,7 +30,9 @@ class AdvertisementType extends AbstractType
             ])
             ->add('description', TextareaType::class,[
                 'required' => true,
-                'attr'=>['max_length' => 10000],
+                'attr'=>['max_length' => 10000,
+                    'style' =>'height:140px'],
+
 
             ])
             ->add('subcategory')

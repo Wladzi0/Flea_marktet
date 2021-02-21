@@ -15,7 +15,7 @@
              <a class="phone" href="tel: {{ advertisement.telNumber }}">{{ advertisement.telNumber }}</a>
 
             <p>{{ advertisement.location }} </p>
-            <p>{{ advertisement.createdAt| date("m.d.Y") }} </p>
+            <p>{{ advertisement.createdAt| date("d.m.Y") }} </p>
         </div>
         <div class="slider-inner">
             {% for image in  advertisement.images %}

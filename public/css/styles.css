@@ -164,6 +164,7 @@ nav .hamburger-menu {
     width: 30px;
 }
 
+
 nav .hamburger-menu .line {
     width: 100%;
     height: 3px;
@@ -181,6 +182,7 @@ nav .navbar {
     background-color: #3a3b3a;
     display: none;
     transition: right .8s cubic-bezier(0.5, 0.5, 0, 1);
+    z-index: 1;
 
 }
 
@@ -344,20 +346,34 @@ nav .cross .line-3 {
     font-size: 17px;
 }
 .new-advertisement  h2{
-    margin-top: 40px;
-    margin-left:40px;
+    margin-top: 50px;
+    margin-left:80px;
 }
 .new-advertisement .form-horizontal{
-    margin-left:40px;
+
+    margin-left:80px;
+    margin-right: 80px;
     margin-top: 20px;
 }
+.new-advertisement .form-horizontal .form-images{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .new-advertisement .form-control{
     display: flex;
     height: 28px;
     border-radius: 3px;
     flex-direction: column;
     margin-bottom: 20px;
-    width:580px;
+    width:500px;
+    box-sizing: border-box;
+    padding:5px;
+}
+.new-advertisement{
+    width: 1060px;
 }
 .new-advertisement .btn-success{
     margin-top:20px;
@@ -434,6 +450,80 @@ nav .cross .line-3 {
 .slider-inner .slick-dots li button{
     display:none;
 }
+.form-signIn, .form-register{
+    padding:30px 40px 60px 40px;
+    border: 1px solid #FFFFFF;
+    border-radius:6px;
+    margin-top: 100px;
+    display:flex;
+    color: #FFFFFF;
+    flex-direction:column;
+    margin-right: auto;
+    margin-left: auto;
+    width: 18%;
+    justify-content:center;
+
+}
+.form-register .top{
+    margin-top:30px;
+    margin-bottom:40px;
+}
+.form-signIn .form-control,.form-register .form-control{
+    width: 97%;
+    height:30px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.form-signIn .form-control{
+    height:40px;
+    border-radius:3px;
+    padding-left:10px;
+    margin-bottom: 10px;
+}
+.form-signIn .checkbox{
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+.form-signIn hr,.form-register hr{
+    width:70%;
+    margin-bottom: 40px;
+}
+.form-signIn .btn, .form-register .btn{
+    font-weight: bold;
+    width:100%;
+    margin-bottom:30px;
+    font-size:17px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height:40px;
+    border-radius:3px;
+    outline:none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.form-signIn .logIn:hover,  .form-register .logIn:hover{
+    background-color:#30d113;
+}
+.form-signIn .logIn,.form-register .logIn{
+    margin-bottom:40px;
+    border:1px solid #30d183;
+    background-color:#30d183;
+
+}
+
+.form-signIn .registration:hover, .form-register .registration:hover {
+    background-color:#44c7f2;
+}
+.form-signIn .registration, .form-register .registration {
+    border:1px solid #30b9d1;
+    background-color:#30b9d1;
+}
+.form-signIn .alert-danger{
+    font-size:15px;
+    padding:20px;
+    background-color:#e31b44;
+}
 /*footer{background-color:#0f1217;*/
 /*    width: 100%;*/
 /*    padding:40px;*/
@@ -462,7 +552,11 @@ nav .cross .line-3 {
     nav #searchAdvertisement_result {
         width: 231px;
     }
+    .form-signIn{
+        width:300px;
+    }
 }
+
 
 @media (max-width: 1380px) {
     nav .logo {
@@ -507,6 +601,9 @@ nav .cross .line-3 {
     nav .links li a {
         margin-right: 0;
     }
+    .new-advertisement{
+        width: 800px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -540,7 +637,7 @@ nav .cross .line-3 {
     nav .hamburger-menu {
         top: 25px;
         display: flex;
-        z-index:100;
+        z-index:99;
     }
 
     nav .navbar {
@@ -593,6 +690,26 @@ nav .cross .line-3 {
 
     nav .navbar ul li .nav-link:hover::before, nav .navbar ul li .nav-link:hover::after {
         transform: scaleX(1);
+    }
+    .new-advertisement .form-horizontal{
+        margin-left:40px;
+        margin-right: 40px;
+    }
+    .new-advertisement  h2{
+        margin-left:40px;
+    }
+    .new-advertisement{
+        width: 600px;
+    }
+    .new-advertisement .form-horizontal img{
+      width: 140px;
+      height: 140px;
+    }
+    .new-advertisement .form-horizontal .form-images{
+        justify-content:space-between;
+    }
+    .form-signIn{
+        width:30%;
     }
 }
 
@@ -683,5 +800,38 @@ nav .cross .line-3 {
     }
     nav #searchAd-mob-version #searchAdvertisement_result{
         display: flex; color:red;
+    }
+    .new-advertisement h2{
+        margin-left:20px;
+    }
+    .new-advertisement .form-horizontal{
+
+        margin-left:20px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    .new-advertisement .form-horizontal .form-images{
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        width: 85%;
+    }
+
+
+    .new-advertisement .form-control{
+        display: flex;
+        height: 28px;
+        border-radius: 3px;
+        flex-direction: column;
+        margin-bottom: 20px;
+        width:300px;
+        box-sizing: border-box;
+        padding:5px;
+    }
+    .new-advertisement{
+        width: 360px;
+    }
+    .form-signIn{
+        width:60%;
     }
 }

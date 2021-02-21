@@ -1,0 +1,49 @@
+{% extends 'security/login.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+{% block javascripts  %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+
+
+	<div class="form-register">
+		{% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
+		{% if formErrors | length %}
+
+				<ul>
+					{% for error in formErrors %}
+						<li>{{ error.message }}</li>
+					{% endfor %}
+				</ul>
+
+		{% endif %}
+		<h1 >Create new account</h1>
+				{{ form_start(registrationForm, {'attr': {'class': 'form-horizontal'}}) }}
+				{{ form_label(registrationForm.firstName) }}<br>
+				{{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control'}}) }}<br>
+				{{ form_label(registrationForm.lastName) }}<br>
+				{{ form_widget(registrationForm.lastName, {'attr': {'class': 'form-control'}}) }}<br>
+				{{ form_label(registrationForm.email) }}<br>
+				{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}<br>
+				{{ form_label(registrationForm.plainPassword.first) }}<br>
+				{{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'form-control'}}) }}<br>
+				{{ form_label(registrationForm.plainPassword.second) }}<br>
+				{{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+				<button  class="btn registration top" type="submit">
+					Sign up
+				</button>
+				{{ form_end(registrationForm) }}
+				<hr>
+		<button  class="logIn btn " onclick="window.location.href='/login'">
+			Back to sign in</button>
+
+	</div>
+
+{#{% block footer %}#}
+{#{{ parent() }}#}
+{#{% endblock %}#}
+{% endblock %}

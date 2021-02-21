@@ -1,7 +1,6 @@
 <?php
 
 namespace App\DataFixtures;
-use App\Entity\Advertisement;
 use App\Entity\Category;
 use App\Entity\Subcategory;
 use Doctrine\Bundle\FixturesBundle\Fixture;

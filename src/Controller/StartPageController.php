@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Advertisement;
 use App\Entity\Category;
 use App\Entity\Subcategory;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class StartPageController extends AbstractController
 {
     /**
+     * @IsGranted ("ROLE_USER")
      * @Route("/", name="start_page")
      * 
      */
