@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add your advertisement {% endblock %}
+    {% block javascripts  %}
+        {{ parent() }}
+    {% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+        <script src="{{ asset('js/selectedImages_input.js') }}"></script>
+    {% endblock %}
+
+{% block content %}
+    <div class="new-advertisement">
+
+        <h2>Create new advertisement</h2>
+        {{ form_start(advertisementForm, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_label(advertisementForm.image) }}
+        {{ form_widget(advertisementForm.image, {'attr': {'class': 'form-images'}}) }}
+        <div  id="selectedImage"></div>
+        <br><br>
+        {{ form_label(advertisementForm.name) }}
+        {{ form_widget(advertisementForm.name, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(advertisementForm.subcategory) }}
+        {{ form_widget(advertisementForm.subcategory, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(advertisementForm.description) }}
+        {{ form_widget(advertisementForm.description, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(advertisementForm.price) }}
+        {{ form_widget(advertisementForm.price, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(advertisementForm.telNumber) }}
+        {{ form_widget(advertisementForm.telNumber, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(advertisementForm.location) }}
+        {{ form_widget(advertisementForm.location, {'attr': {'class': 'form-control'}}) }}
+        {{ form_label(advertisementForm.contactName) }}
+        {{ form_widget(advertisementForm.contactName, {'attr': {'class': 'form-control'}}) }}
+
+        <button  class="btn btn-success">Add</button>
+        {{ form_end(advertisementForm) }}
+
+    </div>
+
+
+{% endblock %}

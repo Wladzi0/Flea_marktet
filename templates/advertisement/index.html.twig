@@ -20,14 +20,14 @@
        {% endif %}
        {%  for advertisement in advertisements %}
            <div class="card">
-{#               <div class="card-image">#}
-{#                   {% set mainPhoto = advertisement.images | first %}#}
-{#                   {% if mainPhoto %}#}
-{#                       <img src="{{ asset('images/itemImages/'~ mainPhoto.name) }}"/><br>#}
-{#                   {% else %}#}
-{#                       <img src="{{ asset('images/itemImages/defaultFitst.jpg') }}"/><br>#}
-{#                   {% endif %}#}
-{#               </div>#}
+               <div class="card-image">
+                   {% set mainPhoto = advertisement.images | first %}
+                   {% if mainPhoto %}
+                       <img src="{{ asset('images/advertisementImages/'~ mainPhoto.name) }}"/><br>
+                   {% else %}
+                       <img src="{{ asset('images/advertisementImages/defaultFirst.jpg') }}"/><br>
+                   {% endif %}
+               </div>
                <div class="card-text">
                    <h4>
                        {{ advertisement.name }}</h4>

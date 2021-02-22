@@ -5,15 +5,21 @@ namespace App\Controller;
 use App\Entity\Advertisement;
 use App\Entity\Image;
 use App\Form\AdvertisementType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+/**
+ * @IsGranted ("ROLE_USER")
+ * @Route("/advertisement")
+ */
 class AdvertisementController extends AbstractController
 {
     /**
+     *
      * @Route("/advertisement", name="advertisement")
      */
     public function index(): Response
@@ -24,7 +30,7 @@ class AdvertisementController extends AbstractController
     }
 
     /**
-     * @Route ("/showAdvertisement/{id}", name="advertisement_details", methods={"GET"}, requirements={"id"="\d+"})
+     * @Route ("/{id}", name="advertisement_details", methods={"GET"}, requirements={"id"="\d+"})
      * @param Advertisement $advertisement
      * @return Response
      */
@@ -47,6 +53,8 @@ class AdvertisementController extends AbstractController
         $advertisementForm->handleRequest($request);
 
         if ($advertisementForm->isSubmitted() && $advertisementForm->isValid()) {
+            $user = $this->get('security.token_storage')->getToken()->getUser();
+            $advertisement->setUser($user);
             $images = $advertisementForm->get('image')->getData();
             foreach ($images as $image) {
                 $file = md5(uniqid()) . '.' . $image->guessExtension();
@@ -74,4 +82,42 @@ class AdvertisementController extends AbstractController
         ]);
 
     }
+
+    /**
+     * @Route("/{id}/edit", name="edit_advertisement", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
+     */
+    public function editAdvertisement(Request $request,Advertisement $advertisement): Response
+    {
+        $advertisementForm = $this->createForm(AdvertisementType::class, $advertisement);
+        $advertisementForm->handleRequest($request);
+
+        if ($advertisementForm->isSubmitted() && $advertisementForm->isValid()) {
+            $images = $advertisementForm->get('image')->getData();
+            foreach ($images as $image) {
+                $file = md5(uniqid()) . '.' . $image->guessExtension();
+                $image->move(
+                    $this->getParameter('advertisement_images_directory'),
+                    $file
+                );
+                $img = new Image();
+                $img->setName($file);
+                $advertisement->addImage($img);
+            }
+            $this->getDoctrine()->getManager()->flush();
+            $request->getSession()
+                ->getFlashBag()
+                ->add('success', 'Your advertisement has been edited successfully ');
+
+            return $this->redirectToRoute('default');
+        }
+
+        return $this->render('advertisement/edit.html.twig', [
+            'advertisement' => $advertisement,
+            '$advertisementForm' => $advertisementForm->createView(),
+        ]);
+    }
+
+
 }

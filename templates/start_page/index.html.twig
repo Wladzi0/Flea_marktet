@@ -16,5 +16,63 @@
         </a>
         {% endfor %}
     </div>
+    <div class="list-of-advertisements">
+        {% if lastAdvertisements  %}
+        {% for lastAdvertisement in lastAdvertisements %}
+{#        <a class="last-advertisement" href="{{ path('advertisement_details', {'id':lastAdvertisement.id}) }}">#}
+{#            {% if lastAdvertisement.name|length > 30  %}#}
+{#                {{ lastAdvertisement.name|striptags|slice(0, 30) ~ '...'}}<i class="fa fa-angle-right"></i> </a>#}
+{#            {% else %}#}
+{#                {{ lastAdvertisement.name}}<i class="fa fa-angle-right"></i> </a>#}
+{#            {% endif %}#}
+
+            <div class="card">
+                <div class="card-image">
+                    {% set mainPhoto = lastAdvertisement.images | first %}
+                    {% if mainPhoto %}
+                        <img src="{{ asset('images/advertisementImages/'~ mainPhoto.name) }}"/><br>
+                    {% else %}
+                        <img  src="{{ asset('images/advertisementImages/defaultFirst.jpg') }}"/><br>
+                    {% endif %}
+                </div>
+                <div class="card-text">
+                    <h4>
+                        {{ lastAdvertisement.name }}</h4>
+
+                    <p>{{ lastAdvertisement.price }}
+                        zł
+                    </p>
+
+                </div>
+
+{#                <span class="date-like">{{lastAdvertisement.createdAt|date('d-m-Y')}}	<a href="{{ path('post_favourite',{'id':post.id }) }}" id="js-favourite" class=" like btn-link ">#}
+{#                  {% if app.user and post.isFavouritedByUser(app.user) %}#}
+{#                      <i class="fas fa-heart"></i>#}
+{#                  {% else %}#}
+{#                      <i class="far fa-heart"></i>#}
+{#                  {% endif %}#}
+{#                </a></span>#}
+{#                <a class="details" href="{{ path('post_show_det', {'id': post.id}) }}">#}
+{#                    <i class="show fas fa-eye"></i>#}
+{#                </a>#}
+
+                {% if app.user.id == lastAdvertisement.user.id %}
+                    <div class="btns-user-options">
+                        <a  class="edit btn-info" href="{{ path('edit_advertisement', {'id': lastAdvertisement.id}) }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+{#                        <form method="post" action="{{ path('delete_advertisement', {'id': post.id}) }}" onsubmit="return confirm('Are you sure you want to delete this advertisement?');">#}
+{#                            <input type="hidden" name="_method" value="DELETE">#}
+{#                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ post.id) }}">#}
+{#                            <button class="delete btn-danger">#}
+{#                                <i class="fas fa-trash-alt"></i>#}
+{#                            </button>#}
+{#                        </form>#}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        {% endif %}
+    </div>
     <div id="searchByCategory"></div>
 {% endblock %}

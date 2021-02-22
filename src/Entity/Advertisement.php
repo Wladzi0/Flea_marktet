@@ -60,6 +60,11 @@ class Advertisement
     private $images;
 
     /**
+     * @ORM\ManyToOne (targetEntity=User::class, inversedBy="advertisements")
+     * @ORM\JoinColumn (nullable=false)
+     */
+    private  $user;
+    /**
      *
      * @ORM\Column(type="string", length=255, nullable=false)
      */
@@ -78,7 +83,24 @@ class Advertisement
     private $telNumber;
 
     public function __construct() {
+
         $this->images = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user): void
+    {
+        $this->user = $user;
     }
 
     /**
@@ -123,7 +145,6 @@ class Advertisement
                 $image->setAdvertisement(null);
             }
         }
-
         return $this;
     }
 
@@ -214,7 +235,6 @@ class Advertisement
     public function setTelNumber(int $telNumber): self
     {
         $this->telNumber = $telNumber;
-
         return $this;
     }
 }

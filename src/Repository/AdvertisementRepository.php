@@ -38,4 +38,11 @@ class AdvertisementRepository extends ServiceEntityRepository
             ->setParameter('subcategory', $subCategory);
         return $query->getQuery()->getResult();
     }
+
+    public function findAdvertisements()
+    {
+        $query=$this->createQueryBuilder('p')
+            ->orderBy('p.updatedAt', 'DESC');
+        return $query->getQuery()->getResult();
+    }
 }

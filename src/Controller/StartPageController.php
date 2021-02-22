@@ -22,8 +22,11 @@ class StartPageController extends AbstractController
     {
         $em=$this->getDoctrine()->getManager();
         $categories =$em->getRepository(Category::class)->FindAll();
+        $advertisementRepo = $em->getRepository(Advertisement::class);
+        $lastAdvertisements = $advertisementRepo->findAdvertisements();
         return $this->render('start_page/index.html.twig', [
             'categories' => $categories,
+            'lastAdvertisements' => $lastAdvertisements,
         ]);
     }
 

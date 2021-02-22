@@ -5,17 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e78e18bb-872f-4146-9d99-ad2f7ff84d71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/stof_doctrine_extensions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/stof_doctrine_extensions.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210214123539.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210221125106.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/selectedImages_input.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/selectedImages_input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/0a72abe4e8e1be76ef6f70148455ea67.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/0c09a928a3ef50c46908a57cfe5c125b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/143388191c2eb4e52501c51417fb4f05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/2c2d2588d5cc90b2066aaae13a7b303b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/69d74a801dbb5b68218d545e0d12e623.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/6f4a36aa30e7dbbaa0b9640f53dafa2f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/71508bd1310151f6fd6340e7922a7d6d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/aba6fe21f3978fc87669601dfadd2ae2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/ad8cf9a9fa7854aa3463d8a349f08344.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/bdbaf7785ea0aa1a96cb77e0d12d8495.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/c722e3d622114e8dea68400a3bb25819.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/d923901a42cb7036eb444e6c9f070733.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/e4ceaadc06a714e9a46486928281927f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/searchAdvertisement.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/searchAdvertisement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdvertisementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdvertisementController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/StartPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StartPageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/CategoriesFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/CategoriesFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AdvertisementType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AdvertisementType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/advertisement/advertisementDetails.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/advertisementDetails.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/advertisement/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Advertisement.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Advertisement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AdvertisementRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AdvertisementRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/advertisement/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/start_page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/start_page/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +191,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/flea_market" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -207,6 +228,8 @@
       <workItem from="1613730848366" duration="29337000" />
       <workItem from="1613823191137" duration="23292000" />
       <workItem from="1613905793020" duration="24750000" />
+      <workItem from="1613978467807" duration="30766000" />
+      <workItem from="1614026056411" duration="1110000" />
     </task>
     <servers />
   </component>

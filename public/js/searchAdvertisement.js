@@ -20,7 +20,7 @@ $(document).ready(function() {
                                     if (key === 'posts') {
                                         if (id !== 'error') {
                                             // entitySelector.append('<li ><b>' + searchString[0] +'</li>');
-                                            entitySelector.append('<a   href="/showAdvertisement/'+id+'">' + searchString[0] +'</a>');
+                                            entitySelector.append('<a   href="advertisement/'+id+'">' + searchString[0] +'</a>');
                                         }
                                         else {
                                             entitySelector.append('<li><b> '+searchString+'</b></li>');

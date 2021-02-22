@@ -13,6 +13,7 @@
         <script src="{{ asset('js/hamburgerMenu.js') }}"></script>
         <script src="{{ asset('js/openSubcategory.js') }}"></script>
         <script src="{{ asset('js/openMobSearch.js') }}"></script>
+        <script src="{{ asset('js/dropdown.js') }}"></script>
     {% endblock %}
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
@@ -37,6 +38,8 @@
     {# searchLocation_result field #}
     <div id="searchLo" class="input-group desktop">
         <input type="text" id="place" placeholder="Enter place">
+        <i id="searchIcon"  class="fas fa-search"></i>
+        <i id="searchlocation" class="fas fa-map-marked-alt"></i>
         {# <ul id="searchLocation_result" ></ul> #}
     </div>
     {# searchLocation_result field #}
@@ -47,14 +50,21 @@
         <li><a href="">Contact</a></li>
         <li><a href="">About</a></li>
     </ul>
-    <i id="searchIcon"  class="fas fa-search"></i>
-    <i id="searchlocation" class="fas fa-map-marked-alt"></i>
-    <a id="add" href="{{ path('new_advertisement') }}">
+
+    <a id="add" class="dropBtn" href="{{ path('new_advertisement') }}">
         <i class="fas fa-plus-circle"></i>
     </a>
+    <div id="Dropdown" class="dropdown-content">
+        <a href="">Personal data</a>
+        <a href="">Favourites</a>
+        <a href="{{ path('app_logout') }}">Logout</a>
+    </div>
 
-    <button id="signIn" class="login-btn">Sign in</button>
-    <button id="signInIcon" class="login-btn"><i class="fas fa-sign-in-alt"></i></button>
+        {% if app.user.avatar %}
+            <img src="{{ asset('images/userPictures/'~ app.user.avatar) }}" alt="" id="signIn" class="login-btn"/>
+        {% else %}
+            <img src="{{ asset('images/userPictures/default.jpeg') }}" alt="" id="signIn" class="login-btn"/>
+        {% endif %}
     <div class="hamburger-menu">
         <div class="line line-1"></div>
         <div class="line line-2"></div>
