@@ -12,10 +12,23 @@
 {% block content %}
     <div class="new-advertisement">
 
-        <h2>Create new advertisement</h2>
+        <h2> Update your advertisement details</h2>
+        {% if app.request.attributes.get('_route') == 'edit_advertisement' %}
+            {% for image in advertisement.images %}
+                <div class="form-images"></div>
+                <img src="{{ asset('images/advertisementImages/'~image.name) }}" alt="image">
+{#                <a  class="fas fa-times-circle" href="{{ path('post_delete_image',{'id':image.id}) }}"#}
+{#                    data-delete data-token="{{ csrf_token('delete' ~ image.id) }}"></a>#}
+
+            {% endfor %}
+        {% endif %}
         {{ form_start(advertisementForm, {'attr': {'class': 'form-horizontal'}}) }}
-        {{ form_label(advertisementForm.image) }}
-        {{ form_widget(advertisementForm.image, {'attr': {'class': 'form-images'}}) }}
+        {% if advertisement.images %}
+            {{ form_label(advertisementForm.image) }}
+            {{ form_widget(advertisementForm.image, {'attr': {'class': 'form-images'}, 'required': false}) }}
+
+        {% endif %}
+
         <div  id="selectedImage"></div>
         <br><br>
         {{ form_label(advertisementForm.name) }}
@@ -33,7 +46,7 @@
         {{ form_label(advertisementForm.contactName) }}
         {{ form_widget(advertisementForm.contactName, {'attr': {'class': 'form-control'}}) }}
 
-        <button  class="btn btn-success">Add</button>
+        <button  class="btn btn-success">Update</button>
         {{ form_end(advertisementForm) }}
 
     </div>

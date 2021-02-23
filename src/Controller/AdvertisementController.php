@@ -7,6 +7,7 @@ use App\Entity\Image;
 use App\Form\AdvertisementType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -115,8 +116,32 @@ class AdvertisementController extends AbstractController
 
         return $this->render('advertisement/edit.html.twig', [
             'advertisement' => $advertisement,
-            '$advertisementForm' => $advertisementForm->createView(),
+            'advertisementForm' => $advertisementForm->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/{id}/delete", name="delete_advertisement", methods={"DELETE"}, requirements={"id":"\d+"})
+     * @param Request $request
+     * @param Advertisement $advertisement
+     *
+     * @return RedirectResponse
+     */
+    public function deleteAdvertisement(Request $request, Advertisement $advertisement, Image $image): RedirectResponse
+    {
+        if($this->isCsrfTokenValid('delete'.$advertisement->getId(),$request->request->get('_token'))){
+            $em= $this->getDoctrine()->getManager();
+//           while($image->getAdvertisement() === $advertisement->getId()){
+//                $nameFile=$image->getName();
+//                unlink($this->getParameter('advertisement_images_directory').'/'.$nameFile);
+//                $em->remove($image);
+//            }
+
+            $em->remove($advertisement);
+            $em->flush();
+        }
+        $referer=$request->headers->get('referer');
+        return new RedirectResponse($referer);
     }
 
 

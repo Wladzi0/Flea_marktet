@@ -70,14 +70,18 @@ class User implements UserInterface
     private $avatar;
 
     /**
-     * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @var \DateTimeInterface|null
      */
     private $createdAt;
 
+
+
     /**
-     * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @var \DateTimeInterface|null
      */
     private $updatedAt;
 
@@ -88,10 +92,60 @@ class User implements UserInterface
 
     public function __construct()
     {
+        $this->setUpdatedAt(new \DateTime('now'));
+        if ($this->getCreatedAt() === null) {
+            $this->setCreatedAt(new \DateTime('now'));
+        }
         $this->advertisements = new ArrayCollection();
-
-
     }
+
+    /**
+     * @return DateTimeInterface|null
+     */
+    public function getCreatedAt(): ?DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param DateTimeInterface|null $createdAt
+     */
+    public function setCreatedAt(?DateTimeInterface $createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+
     /**
      * @return ArrayCollection
      */
@@ -121,21 +175,6 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getCreatedAt(): DateTime
-    {
-        return $this->createdAt;
-    }
-
-
-    public function setCreatedAt($createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-
 
     /**
      * @return mixed
@@ -151,24 +190,6 @@ class User implements UserInterface
     public function setAvatar($avatar): void
     {
         $this->avatar = $avatar;
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getUpdatedAt(): DateTime
-    {
-        return $this->updatedAt;
-    }
-
-
-    public function setUpdatedAt($updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
-    }
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 
     public function getEmail(): ?string

@@ -18,17 +18,17 @@ class UserFixtures extends Fixture
     }
     public function load(ObjectManager $manager)
     {
-        $admin= new User();
-        $admin->setFirstName('Vladyslav');
-        $admin->setLastName('Svizinskyi');
-        $admin->setEmail('vlad.svizinskiy@gmail.com');
-        $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setPassword($this->passwordEncoder->encodePassword(
-            $admin,
-            'admin1'
-        ));
-        $manager->persist($admin);
-        $manager->flush();
+//        $admin= new User();
+//        $admin->setFirstName('Vladyslav');
+//        $admin->setLastName('Svizinskyi');
+//        $admin->setEmail('vlad.svizinskiy@gmail.com');
+//        $admin->setRoles(['ROLE_ADMIN']);
+//        $admin->setPassword($this->passwordEncoder->encodePassword(
+//            $admin,
+//            'admin1'
+//        ));
+//        $manager->persist($admin);
+//        $manager->flush();
 
     }
 }

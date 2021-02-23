@@ -55,6 +55,7 @@ class SecurityController extends AbstractController
             $user=$registerForm->getData();
             // 3) Encode the password (you could also do this via Doctrine listener)
             $user->setRoles(['ROLE_USER']);
+
             $user->setPassword(
                 $passwordEncoder->encodePassword($user,
             $registerForm->get('plainPassword')->getData()
