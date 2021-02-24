@@ -82,9 +82,21 @@ class Advertisement
      */
     private $telNumber;
 
+    /**
+     * @ORM\OneToMany(targetEntity=FavouriteAdvertisement::class, mappedBy="advertisement")
+     */
+    private $favouriteAdvertisements;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="advertisement")
+     */
+    private $comments;
+
     public function __construct() {
 
         $this->images = new ArrayCollection();
+        $this->favouriteAdvertisements = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     /**
@@ -211,9 +223,6 @@ class Advertisement
     {
         return $this->updatedAt;
     }
-    public function __toString() {
-        return $this->name;
-    }
 
     public function getLocation(): ?string
     {
@@ -235,6 +244,79 @@ class Advertisement
     public function setTelNumber(int $telNumber): self
     {
         $this->telNumber = $telNumber;
+        return $this;
+    }
+
+    public function isFavouritedByUser(User $user): bool
+    {
+        foreach ($this->favouriteAdvertisements as $favouriteAdvertisement) {
+            if($favouriteAdvertisement->getUser() === $user){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @return Collection|FavouriteAdvertisement[]
+     */
+    public function getFavouriteAdvertisements(): Collection
+    {
+        return $this->favouriteAdvertisements;
+    }
+
+    public function addFavouriteAdvertisement(FavouriteAdvertisement $favouriteAdvertisement): self
+    {
+        if (!$this->favouriteAdvertisements->contains($favouriteAdvertisement)) {
+            $this->favouriteAdvertisements[] = $favouriteAdvertisement;
+            $favouriteAdvertisement->setAdvertisement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavouriteAdvertisement(FavouriteAdvertisement $favouriteAdvertisement): self
+    {
+        if ($this->favouriteAdvertisements->removeElement($favouriteAdvertisement)) {
+            // set the owning side to null (unless already changed)
+            if ($favouriteAdvertisement->getAdvertisement() === $this) {
+                $favouriteAdvertisement->setAdvertisement(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString() {
+        return $this->name;
+    }
+
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setAdvertisement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getAdvertisement() === $this) {
+                $comment->setAdvertisement(null);
+            }
+        }
+
         return $this;
     }
 }

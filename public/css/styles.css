@@ -286,7 +286,7 @@ nav .iconOpen{
 
 #searchByCategory {
     padding: 12px;
-    height: 336px;
+    height: 338px;
     margin-top: 40px;
     background-color: #FFFFFF;
     display: none;
@@ -296,6 +296,7 @@ nav .iconOpen{
     min-width: 260px;
     border: 1px solid #FFFFFF;
     border-radius: 3px;
+    z-index: 1;
 
 }
 
@@ -464,9 +465,12 @@ nav .iconOpen{
     right: 0;
     top: 45%;
     outline: none;
+    cursor: pointer;
 }
 
+
 .slider-inner .slick-prev {
+    cursor: pointer;
     outline: none;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -635,7 +639,7 @@ nav .iconOpen{
  }
 
 .list-of-advertisements .card .card-image img{
-    width:300px;
+    width:305px;
     transition: all .5s ease-in-out;
 
 }
@@ -648,12 +652,46 @@ nav .iconOpen{
 }
 .list-of-advertisements .card .card-text p{
     position:absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    top:220px;
+    margin-left:20px;
     font-size: 25px;
     font-weight: 600;
-    color:  #FF007F;
+    color:  #1d67cf;
+}
+.list-of-advertisements .card .details{
+    overflow:hidden;
+    display:flex;
+    width:200px;
+    justify-content:center;
+    margin:40px auto 10px auto;
+    border-radius:10px;
+    padding:10px 30px 10px 30px;
+    background:#27c8e8;
+    color: white;
+}
+.list-of-advertisements .card .details:not(hover){
+    transition: 1s;
+}
+.list-of-advertisements .card .details:hover{
+    transition: 1s;
+    background-color:#509FC7;
+}
+.list-of-advertisements a{
+    color: #0a0a0a;
+    text-decoration: none;
+}
+.list-of-advertisements .card .card-text .title{
+    font-size:22px;
+    margin-top:10px;
+}
+.list-of-advertisements .card  .line{
+    margin-left:20px;
+    margin-right:20px;
+
+    display:flex;
+    justify-content: space-between;
+    flex-direction:row;
 }
 .list-of-advertisements .card .btns-user-options .btn-danger{
     background-color: #FFFFFF;
@@ -668,8 +706,47 @@ nav .iconOpen{
     outline:none;
     border-radius:50px;
 }
+.list-of-advertisements .card .btns-user-options .edit{
+    padding:0;
+    position:absolute;
+    top:245px;
+    right:75px;
+    color: #e8b527;
+    font-size: 22px;
+    cursor:pointer;
+    outline:none;
+    border-radius:50px;
+}
+.list-of-advertisements .card .btns-user-options .edit:hover{
+    color:#ebcd34;
+}
 .list-of-advertisements .card .btns-user-options .btn-danger:hover{
     color: #b22252;
+}
+.list-of-advertisements .card #js-favourite{
+    position: absolute;
+    color:#eb3434;
+    top: 245px;
+    font-size: 22px;
+    right:25px;
+}
+
+.list-of-advertisements .card #js-favourite:hover{
+    cursor:pointer;
+    animation: like 1s infinite forwards;
+}
+
+@keyframes like {
+    0%{
+        font-size: 20px;
+    }
+    50%{
+        font-size: 23px;
+    }
+    100%{
+        font-size: 20px;
+    }
+
 }
 
 /*footer{background-color:#0f1217;*/

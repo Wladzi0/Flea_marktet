@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Advertisement;
+use App\Entity\FavouriteAdvertisement;
 use App\Entity\Image;
 use App\Form\AdvertisementType;
+use App\Repository\FavouriteAdvertisementRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -145,4 +147,43 @@ class AdvertisementController extends AbstractController
     }
 
 
+    /**
+     * @Route ("/{id}/favourite", name="favourite_advertisement")
+     * @param Advertisement $advertisement
+     * @param FavouriteAdvertisement $favouriteAdvertisement
+     */
+    public function favouriteAdvertisement(Advertisement $advertisement, FavouriteAdvertisementRepository $advertisementRepository)
+    {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        if(!$user){
+            return $this->json([
+                'code'=>403,
+                'message'=>'Unauthorized'
+            ],403);
+        }
+        $em=$this->getDoctrine()->getManager();
+        if($advertisement->isFavouritedByUser($user)){
+            $favouriteAdvertisement=$advertisementRepository->findOneBy([
+                'user'=>$user,
+                'advertisement'=>$advertisement
+            ]);
+            $em->remove($favouriteAdvertisement);
+            $em->flush();
+            return $this->json([
+                'code'=>'200',
+                'message'=>'fovourite was deleted',
+                'favouriteAdvertisement'=>$advertisementRepository->count(['advertisement'=>$advertisement])
+                ],200);
+        } else{
+            $favouriteAdvertisement= new FavouriteAdvertisement();
+            $favouriteAdvertisement->setUser($user);
+            $favouriteAdvertisement->setAdvertisement($advertisement);
+            $em->persist($favouriteAdvertisement);
+            $em->flush();
+        }
+        return  $this->json([
+            'code'=>200,
+            'message'=> 'favourited',
+            'favourite'=> $advertisementRepository->count(['advertisement'=>$advertisement])],200);
+    }
 }

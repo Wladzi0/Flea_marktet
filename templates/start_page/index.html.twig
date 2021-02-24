@@ -6,8 +6,6 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/dynamicDeleteAdvertisement.js') }}"></script>
-
-
 {% endblock %}
 {% block content %}
     <div class="side-nav">
@@ -22,12 +20,6 @@
     <div class="list-of-advertisements">
         {% if lastAdvertisements  %}
         {% for lastAdvertisement in lastAdvertisements %}
-{#        <a class="last-advertisement" href="{{ path('advertisement_details', {'id':lastAdvertisement.id}) }}">#}
-{#            {% if lastAdvertisement.name|length > 30  %}#}
-{#                {{ lastAdvertisement.name|striptags|slice(0, 30) ~ '...'}}<i class="fa fa-angle-right"></i> </a>#}
-{#            {% else %}#}
-{#                {{ lastAdvertisement.name}}<i class="fa fa-angle-right"></i> </a>#}
-{#            {% endif %}#}
 
             <div class="card">
                 <div class="card-image">
@@ -39,31 +31,28 @@
                     {% endif %}
                 </div>
                 <div class="card-text">
-                    <h4>
-                        {{ lastAdvertisement.name }}</h4>
+                    <h4 class="title">
+                        {% if lastAdvertisement.name|length > 23  %}
+                            {{ lastAdvertisement.name|striptags|slice(0, 23) ~ '...'}}
+                        {% else %}
+                            {{ lastAdvertisement.name}}
+                        {% endif %}
+                    </h4>
+
 
                     <p>{{ lastAdvertisement.price }}
                         zł
                     </p>
-                    <h4>
-                        {{lastAdvertisement.createdAt|date("d/m/Y") }}
-                    </h4>
-                    <h4>
-                        {{lastAdvertisement.location }}
-                    </h4>
-
                 </div>
 
-{#                <span class="date-like">{{lastAdvertisement.createdAt|date('d-m-Y')}}	<a href="{{ path('post_favourite',{'id':post.id }) }}" id="js-favourite" class=" like btn-link ">#}
-{#                  {% if app.user and post.isFavouritedByUser(app.user) %}#}
-{#                      <i class="fas fa-heart"></i>#}
-{#                  {% else %}#}
-{#                      <i class="far fa-heart"></i>#}
-{#                  {% endif %}#}
-{#                </a></span>#}
-{#                <a class="details" href="{{ path('post_show_det', {'id': post.id}) }}">#}
-{#                    <i class="show fas fa-eye"></i>#}
-{#                </a>#}
+                <span class="date-like"><a href="{{ path('favourite_advertisement',{'id':lastAdvertisement.id }) }}" id="js-favourite" class=" like btn-link ">
+                  {% if app.user and lastAdvertisement.isFavouritedByUser(app.user) %}
+                      <i class=" fas fa-heart"></i>
+                  {% else %}
+                      <i class="far fa-heart"></i>
+                  {% endif %}
+                </a></span>
+
 
                 {% if app.user.id == lastAdvertisement.user.id %}
                     <div class="btns-user-options">
@@ -79,9 +68,23 @@
                         </form>
                     </div>
                 {% endif %}
+                <a class="details" href="{{ path('advertisement_details', {'id': lastAdvertisement.id}) }}">Details &nbsp  <i class="fas fa-arrow-right"></i></a>
+                <div class="line">
+                    <h4 >
+                        {{lastAdvertisement.createdAt|date("d/m/Y") }}
+                    </h4>
+                    <h4 >
+                        {{lastAdvertisement.location }}
+                    </h4>
+                </div>
             </div>
+
+
         {% endfor %}
         {% endif %}
     </div>
-
+{% block javascriptblock %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ asset('js/like.js') }}"></script>
+    {% endblock %}
 {% endblock %}

@@ -6,8 +6,14 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
 
+    {# <script src="{{ asset('js/like_unlike.js') }}"> </script> #}
+
+{% endblock %}
 {% block content %}
+
     <div class="container-details">
         <div class="stick-price"><p id="price">{{ advertisement.price }} zł </p></div>
         <div class="data">
@@ -42,12 +48,10 @@
 
         </div>
     </div>
-    {% block javascripts %}
-        {{ parent() }}
+
+    {%  block javasriptsblock %}
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        {# <script src="{{ asset('js/like_unlike.js') }}"> </script> #}
         <script src="{{ asset('js/slick.js') }}"></script>
         <script src="{{ asset('js/fade.js') }}"></script>
     {% endblock %}
-
 {% endblock %}
