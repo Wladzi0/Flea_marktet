@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Advertisement;
+use App\Entity\Comment;
 use App\Entity\FavouriteAdvertisement;
 use App\Entity\Image;
 use App\Form\AdvertisementType;
+use App\Form\CommentType;
 use App\Repository\FavouriteAdvertisementRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,14 +35,17 @@ class AdvertisementController extends AbstractController
     }
 
     /**
-     * @Route ("/{id}", name="advertisement_details", methods={"GET"}, requirements={"id"="\d+"})
+     * @Route ("/{id}", name="advertisement_details", methods={"GET","POST"}, requirements={"id"="\d+"})
+     * @param Request $request
      * @param Advertisement $advertisement
      * @return Response
      */
-    public function showAdvertisementDetails(Advertisement $advertisement): Response
+    public function showAdvertisementDetails(Request $request, Advertisement $advertisement): Response
     {
+        $advertisement= $this->getDoctrine()->getRepository(Advertisement::class)->find($request->get('id'));
         return $this->render('advertisement/advertisementDetails.html.twig', [
-            'advertisement' => $advertisement
+            'advertisement' => $advertisement,
+
         ]);
     }
 
@@ -126,10 +131,9 @@ class AdvertisementController extends AbstractController
      * @Route("/{id}/delete", name="delete_advertisement", methods={"DELETE"}, requirements={"id":"\d+"})
      * @param Request $request
      * @param Advertisement $advertisement
-     *
      * @return RedirectResponse
      */
-    public function deleteAdvertisement(Request $request, Advertisement $advertisement, Image $image): RedirectResponse
+    public function deleteAdvertisement(Request $request, Advertisement $advertisement): RedirectResponse
     {
         if($this->isCsrfTokenValid('delete'.$advertisement->getId(),$request->request->get('_token'))){
             $em= $this->getDoctrine()->getManager();
@@ -150,9 +154,10 @@ class AdvertisementController extends AbstractController
     /**
      * @Route ("/{id}/favourite", name="favourite_advertisement")
      * @param Advertisement $advertisement
-     * @param FavouriteAdvertisement $favouriteAdvertisement
+     * @param FavouriteAdvertisementRepository $advertisementRepository
+     * @return Response
      */
-    public function favouriteAdvertisement(Advertisement $advertisement, FavouriteAdvertisementRepository $advertisementRepository)
+    public function favouriteAdvertisement(Advertisement $advertisement, FavouriteAdvertisementRepository $advertisementRepository):Response
     {
         $user = $this->get('security.token_storage')->getToken()->getUser();
         if(!$user){

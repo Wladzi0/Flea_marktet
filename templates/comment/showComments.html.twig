@@ -1,0 +1,31 @@
+{% block body %}
+    <div class="comments-content">
+        {#        <h2>Comments ({{lastComments|length}})</h2>#}
+        <form method="post" class="comment-form" id="comment-form" >
+            <input id="commentContent" placeholder="Add your comment">
+            {#        {{ form_start(commentForm, {'attr': {'class': 'comment-form', 'id': 'comment-form'}}) }}#}
+            {#        {{ form_widget(commentForm) }}#}
+            <button class="comment-btn" name="submit" id="submit" value="Comment" type="button">Comment</button>
+            {#        {{ form_end(commentForm) }}#}
+
+        </form>
+
+        <div id="displayComment"></div>
+        {#        <div class="comment-list-content">#}
+        {#            {% for lastComment in lastComments  %}#}
+        {#                <p>{{ lastComment.user }}</p><small>{{ lastComment.createdAt ? lastComment.createdAt|ago : 'unpublished' }}    </small></td>#}
+        {#                <p>{{ lastComment.content }}</p>#}
+
+        {#            {% endfor %}#}
+
+        {#        </div>#}
+    </div>
+
+
+{%  block javasriptsblock %}
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="{{ asset('js/showAllAdverComments.js') }}"></script>
+{% endblock %}
+
+{% endblock %}

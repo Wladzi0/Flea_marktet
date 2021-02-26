@@ -13,7 +13,7 @@
 
 {% endblock %}
 {% block content %}
-
+    <input type="hidden" id="advertisementID" value="{{ advertisement.id }}">
     <div class="container-details">
         <div class="stick-price"><p id="price">{{ advertisement.price }} zł </p></div>
         <div class="data">
@@ -48,10 +48,12 @@
 
         </div>
     </div>
-
+    {% include '/comment/showComments.html.twig' %}
     {%  block javasriptsblock %}
+
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="{{ asset('js/slick.js') }}"></script>
         <script src="{{ asset('js/fade.js') }}"></script>
+
     {% endblock %}
 {% endblock %}

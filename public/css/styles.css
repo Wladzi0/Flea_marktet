@@ -317,9 +317,8 @@ nav .iconOpen{
 }
 
 .container-details, .new-advertisement {
-    margin: 30px auto 100px auto;
+    margin: 30px auto 30px auto;
     position: relative;
-
     padding-bottom: 20px;
     font-size: 17px;
     border: 1px solid #FFFFFF;
@@ -332,6 +331,7 @@ nav .iconOpen{
 }
 
 .container-details .stick-price {
+
     margin-right: 5px;
     margin-top: 5px;
     background-color: #6bbf26;
@@ -346,7 +346,7 @@ nav .iconOpen{
 }
 
 .container-details .description-block {
-    padding: 40px 100px 40px 100px;
+   padding: 20px 100px 60px 60px;
 }
 
 .container-details .description-block strong {
@@ -392,6 +392,28 @@ nav .iconOpen{
 
 .container-details .description-block p {
     font-size: 17px;
+}
+.comments-content{
+    padding-top: 10px;
+    color:#FFFFFF;
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 3px;
+    border: 1px solid #FFFFFF;
+    margin: 20px auto 100px auto;
+}
+.comments-content h2{
+    padding-left: 60px;
+}
+.comments-content .comment-form{
+    padding-left: 60px;
+
+    margin-bottom:60px;
+}
+.comments-content .comment-form .comment-btn{
+    margin-top:20px;
+
 }
 
 .new-advertisement h2 {
@@ -442,7 +464,7 @@ nav .iconOpen{
 
 .slider-inner {
     margin-top: 40px;
-    margin-left: 100px;
+    margin-left: 60px;
     width: 50%;
     height: 350px;
 }
@@ -747,6 +769,14 @@ nav .iconOpen{
         font-size: 20px;
     }
 
+}
+.comments-content #displayComment .fieldComment{
+    margin-left: 60px;
+    margin-bottom: 40px;
+}
+.comments-content #comment-form #commentContent{
+    background-color: #24252A;
+    width: 300px;
 }
 
 /*footer{background-color:#0f1217;*/
