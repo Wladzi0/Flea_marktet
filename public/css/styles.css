@@ -55,7 +55,7 @@ nav .dropdown-content a {
 nav .dropdown-content a:hover {
     background-color: #e1f1f2;
     color: #000000;
-    padding-left: 12px;
+
 }
 
 
@@ -646,7 +646,7 @@ nav .iconOpen{
     transition: all .2s ease-in-out;
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 440px;
     background-color: #fff;
     border-radius: 18px;
     box-shadow: 2px 2px 8px 3px gray;
@@ -675,7 +675,7 @@ nav .iconOpen{
 .list-of-advertisements .card .card-text p{
     position:absolute;
     width: 100%;
-    top:220px;
+    top:240px;
     margin-left:20px;
     font-size: 25px;
     font-weight: 600;
@@ -686,7 +686,7 @@ nav .iconOpen{
     display:flex;
     width:200px;
     justify-content:center;
-    margin:40px auto 10px auto;
+    margin:70px auto 0 auto;
     border-radius:10px;
     padding:10px 30px 10px 30px;
     background:#27c8e8;
@@ -709,6 +709,7 @@ nav .iconOpen{
 }
 .list-of-advertisements .card  .line{
     margin-left:20px;
+    /*margin-top: 30px;*/
     margin-right:20px;
 
     display:flex;
@@ -731,7 +732,7 @@ nav .iconOpen{
 .list-of-advertisements .card .btns-user-options .edit{
     padding:0;
     position:absolute;
-    top:245px;
+    top:265px;
     right:75px;
     color: #e8b527;
     font-size: 22px;
@@ -748,7 +749,7 @@ nav .iconOpen{
 .list-of-advertisements .card #js-favourite{
     position: absolute;
     color:#eb3434;
-    top: 245px;
+    top: 265px;
     font-size: 22px;
     right:25px;
 }
@@ -777,8 +778,51 @@ nav .iconOpen{
 .comments-content #comment-form #commentContent{
     background-color: #24252A;
     width: 300px;
-}
+    color: #FFFFFF;
+    padding: 5px 10px 5px 10px;
+    outline:none;
+    border-bottom-color: #32a88f;
 
+}
+.comments-content #comment-form #submit{
+   background-color:#32a88f;
+    outline: none;
+    padding: 5px 10px 5px 10px;
+    border:1px solid #32a88f;
+    border-radius:3px;
+
+}
+.data-block{
+    padding: 40px;
+    border:1px solid #fff;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.data-block .btn-data-edit, .data-block .form-horizontal .btn-update{
+    width: 300px;
+    color:#FFFFFF;
+    background-color:#20b010;
+    border-radius: 3px;
+    padding: 10px 20px 10px 20px;
+}
+.data-block .btn-data-edit a{
+
+    text-decoration:none;
+}
+.data-block .form-horizontal{
+    display: flex;
+    flex-direction: column;
+    width:300px;
+}
+.data-block .form-control{
+    height: 25px;
+    border-radius: 3px;
+    margin-bottom:30px;
+}
 /*footer{background-color:#0f1217;*/
 /*    width: 100%;*/
 /*    padding:40px;*/
@@ -788,6 +832,11 @@ nav .iconOpen{
 /*    display:flex;*/
 /*    flex: 0 0 auto;*/
 /*}*/
+.advertisements-block{
+    width: 90%;
+    margin-left: 100px;
+
+}
 
 
 @media (max-width: 1470px) {

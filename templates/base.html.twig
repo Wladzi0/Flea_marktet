@@ -55,8 +55,9 @@
         <i class="fas fa-plus-circle"></i>
     </a>
     <div id="Dropdown" class="dropdown-content">
-        <a href="">Personal data</a>
-        <a href="">Favourites</a>
+        <a href="{{ path('app_account') }}">Personal data</a>
+        <a href="{{ path('my_advertisements') }}">My advertisements</a>
+        <a href="{{ path('favourite_advertisements') }}">Favourites</a>
         <a href="{{ path('app_logout') }}">Logout</a>
     </div>
 

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}My advertisements{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/selectedAvatar.js') }}"></script>
+{% endblock %}
+{% block content %}
+
+
+            <div class="data-block">
+                <h1>Hello {{ app.user.username}}! ✅</h1>
+                {{ form_start(userFormInfo, {'attr': {'class': 'form-horizontal'}}) }}
+                {{ form_label(userFormInfo.avatar ) }}
+                {{ form_widget(userFormInfo.avatar, {'attr': {'class': 'form-control'}}) }}
+                <div  id="selectedAvatar"></div>
+                {{ form_label(userFormInfo.firstName) }}
+                {{ form_widget(userFormInfo.firstName, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(userFormInfo.lastName) }}
+                {{ form_widget(userFormInfo.lastName, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(userFormInfo.email) }}
+                {{ form_widget(userFormInfo.email, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(userFormInfo.dateOfBirth) }}
+                {{ form_widget(userFormInfo.dateOfBirth, {'attr': {'class': 'form-control'},'required': false }) }}
+                {{ form_label(userFormInfo.phoneNumber) }}
+                {{ form_widget(userFormInfo.phoneNumber, {'attr': {'class': 'form-control'}, 'required': false}) }}
+
+                <button class="btn-update " type="submit">
+                    Update your personal data
+                </button>
+
+                {{ form_end(userFormInfo) }}
+
+            </div>
+
+
+{% endblock %}

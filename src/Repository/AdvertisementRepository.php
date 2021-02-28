@@ -41,8 +41,16 @@ class AdvertisementRepository extends ServiceEntityRepository
 
     public function findAdvertisements()
     {
-        $query=$this->createQueryBuilder('p')
-            ->orderBy('p.updatedAt', 'DESC');
+        $query=$this->createQueryBuilder('a')
+            ->orderBy('a.updatedAt', 'DESC');
+        return $query->getQuery()->getResult();
+    }
+
+    public function findAllUserAdv($user)
+    {
+        $query=$this->createQueryBuilder('a')
+            ->where('a.user = :user')
+            ->setParameter('user', $user);
         return $query->getQuery()->getResult();
     }
 }

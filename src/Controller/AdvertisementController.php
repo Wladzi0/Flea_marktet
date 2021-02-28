@@ -189,6 +189,6 @@ class AdvertisementController extends AbstractController
         return  $this->json([
             'code'=>200,
             'message'=> 'favourited',
-            'favourite'=> $advertisementRepository->count(['advertisement'=>$advertisement])],200);
+            'favouriteAdvertisement'=> $advertisementRepository->count(['advertisement'=>$advertisement])],200);
     }
 }

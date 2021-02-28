@@ -26,4 +26,5 @@ class FavouriteAdvertisementRepository extends ServiceEntityRepository
                 ->setParameter('user', $userId);
             return $query->getQuery()->getResult();
     }
+
 }

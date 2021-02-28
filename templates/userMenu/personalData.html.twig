@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}Personal data{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+    {% block content %}
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="alert alert-{{ type }} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    {{ message | raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        <div class="data-block">
+            {% if app.user.avatar %}
+
+                <img  src="{{asset('images/userPictures/'~ app.user.avatar) }}" alt=""  style=" width:180px; height:180px; border-radius: 20px; margin-bottom:20px;" />
+            {% else %}
+                <img src="{{ asset('images/userPictures/default.jpeg') }}" alt=""
+                     style=" width:180px; height:180px; border-radius: 20px; margin-bottom:20px;"/>
+            {% endif %}
+            <h3>Hello  {{ app.user.username|default('undefined') }}</h3>
+
+            <label> First name:  {{ app.user.firstName}}</label><br>
+            <label> Last name:  {{ app.user.lastName}}</label><br>
+            <label> Email:  {{ app.user.email}}</label><br>
+            {% if app.user.dateOfBirth  %}
+                <label> Date of Birth: {{ app.user.dateOfBirth|date('d-m-Y') }}</label><br>
+            {% endif %}
+            {% if app.user.phoneNumber  %}
+                <label> Phone number: {{ app.user.phoneNumber }}</label><br>
+            {% endif %}
+            <button class="btn-data-edit "> <a href="{{ path('personal_data_edit') }}">Edit your personal data</a></button>
+
+
+        </div>
+    {% endblock %}

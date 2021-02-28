@@ -2,7 +2,7 @@
     <div class="comments-content">
         {#        <h2>Comments ({{lastComments|length}})</h2>#}
         <form method="post" class="comment-form" id="comment-form" >
-            <input id="commentContent" placeholder="Add your comment">
+            <input id="commentContent" placeholder="Add your comment" autocomplete="off">
             {#        {{ form_start(commentForm, {'attr': {'class': 'comment-form', 'id': 'comment-form'}}) }}#}
             {#        {{ form_widget(commentForm) }}#}
             <button class="comment-btn" name="submit" id="submit" value="Comment" type="button">Comment</button>
