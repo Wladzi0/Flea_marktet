@@ -1,6 +1,6 @@
 let searchlost;
 window.onbeforeunload = function() {
-   searchlost=localStorage.setItem("search", $('#search').val());
+   searchlost=$('#search').val();
 
 
 }
