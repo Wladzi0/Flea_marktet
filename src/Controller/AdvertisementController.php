@@ -11,6 +11,7 @@ use App\Form\CommentType;
 use App\Repository\FavouriteAdvertisementRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -118,7 +119,7 @@ class AdvertisementController extends AbstractController
                 ->getFlashBag()
                 ->add('success', 'Your advertisement has been edited successfully ');
 
-            return $this->redirectToRoute('default');
+            return $this->redirectToRoute('start_page');
         }
 
         return $this->render('advertisement/edit.html.twig', [
@@ -128,26 +129,28 @@ class AdvertisementController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/delete", name="delete_advertisement", methods={"DELETE"}, requirements={"id":"\d+"})
+     * @Route("/{id}", name="delete_advertisement", methods={"DELETE"}, requirements={"id"="\d+"} )
      * @param Request $request
      * @param Advertisement $advertisement
-     * @return RedirectResponse
+     * @return Response
      */
-    public function deleteAdvertisement(Request $request, Advertisement $advertisement): RedirectResponse
+    public function deleteAdvertisement(Request $request, Advertisement $advertisement): Response
     {
-        if($this->isCsrfTokenValid('delete'.$advertisement->getId(),$request->request->get('_token'))){
-            $em= $this->getDoctrine()->getManager();
-//           while($image->getAdvertisement() === $advertisement->getId()){
+        if ($this->isCsrfTokenValid('delete' . $advertisement->getId(), $request->request->get('_token'))) {
+            $em = $this->getDoctrine()->getManager();
+//            while($image->getAdvertisement() === $advertisement->getId()){
 //                $nameFile=$image->getName();
 //                unlink($this->getParameter('advertisement_images_directory').'/'.$nameFile);
-//                $em->remove($image);
+//                $em->remove(image);
 //            }
 
             $em->remove($advertisement);
             $em->flush();
         }
-        $referer=$request->headers->get('referer');
+        $referer = $request->headers->get('referer');
         return new RedirectResponse($referer);
+
+
     }
 
 
@@ -191,4 +194,27 @@ class AdvertisementController extends AbstractController
             'message'=> 'favourited',
             'favouriteAdvertisement'=> $advertisementRepository->count(['advertisement'=>$advertisement])],200);
     }
+
+    /**
+     * @Route("/delete/image/{id}", name="advertisement_delete_image", methods={"DELETE"})
+     * @param Request $request
+     * @param Image $image
+     * @return JsonResponse
+     */
+    public function deleteImageFromAdvertisement(Request $request, Image $image): JsonResponse
+    {
+        $data=json_decode($request->getContent(),true);
+        if($this->isCsrfTokenValid('delete'.$image->getId(), $data['_token'])){
+            $nameFile=$image->getName();
+            //we delete the file
+            unlink($this->getParameter('advertisement_images_directory').'/'.$nameFile);
+            //we delete the file from database
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($image);
+            $em->flush();
+            return new JsonResponse(['success'=>1]);
+        }else{
+            return new JsonResponse(['error'=>'Token Invalid'],400);
+        }
+        }
 }

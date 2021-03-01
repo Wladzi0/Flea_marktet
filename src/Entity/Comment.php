@@ -19,6 +19,7 @@ class Comment
 
     /**
      * @ORM\ManyToOne(targetEntity=Advertisement::class, inversedBy="comments")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $advertisement;
 

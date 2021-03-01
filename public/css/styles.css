@@ -26,7 +26,7 @@ nav .logo {
 }
 
 nav .logo a {
-    color: #FFFFFF;
+    color: #00ffff;
     text-decoration: none;
 }
 
@@ -147,26 +147,31 @@ nav .left-input {
 }
 
 nav .input-group input {
-
+    color: #FFFFFF;
+    background-color: #24252A;
+    border-bottom:1px solid #00ffff;
     margin-top: 10px;
     width: 298px;
     font-size: 15px;
     padding: 5px;
     height: 20px;
+    outline: none;
 
 }
 
-nav #searchAdvertisement_result {
+nav #searchAdvertisement_result ,nav #searchLocation_result{
     position: absolute;
-    top: 42px;
+    border: 1px solid #00ffff;
+    top: 45px;
     flex-direction: column;
-    background-color: #ffffff;
-    width: 271px;
+    background-color: #24252A;
+    width: 270px;
     margin-left: 0;
     overflow-y: scroll;
+    z-index:2;
 }
 
-nav #searchAdvertisement_result a, nav #searchAdvertisement_result li {
+nav #searchAdvertisement_result a, nav #searchAdvertisement_result li, nav #searchLocation_result a, nav #searchLocation_result li{
     display: flex;
     flex-direction: column;
     margin-top: 3px;
@@ -174,7 +179,7 @@ nav #searchAdvertisement_result a, nav #searchAdvertisement_result li {
     padding: 10px;
     text-decoration: none;
     margin-left: -40px;
-    color: #000000;
+    color: #FFFFFF;
 }
 
 nav #searchAdvertisement_result a:hover {
@@ -679,7 +684,7 @@ nav .iconOpen{
     margin-left:20px;
     font-size: 25px;
     font-weight: 600;
-    color:  #1d67cf;
+    color:  #000000;
 }
 .list-of-advertisements .card .details{
     overflow:hidden;
@@ -837,7 +842,54 @@ nav .iconOpen{
     margin-left: 100px;
 
 }
+.new-advertisement .form-images{
+    width: 100%;
+    margin-left:80px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+.new-advertisement .form-images .image-block{
+    position: relative;
+    display:flex;
+    flex-direction:row;
+    width:250px;
+    height:250px;
+    border-radius: 20px;
+    margin-right:40px;
+    margin-bottom:20px;
+}
+.new-advertisement .form-images .image-block a{
+    color:#ff0000;
+    top: -5px;
+    right: -5px;
+    position: absolute;
+    border: 1px solid #b22222;
+    width: 25px;
+    height: 25px;
+    border-radius:50px;
+    cursor:pointer;
+    outline:none;
+    background-color:#FFFFFF;
 
+
+}
+.new-advertisement .form-images .image-block a i {
+    font-size: 30px;
+}
+.new-advertisement .form-images .image-block img {
+    width: 250px;
+    height: 250px;
+}
+.full-screen{
+    margin-left: 70px;
+    margin-right:auto;
+    width:90%;
+}
+.count-Adv{
+    margin:0 0 -30px 70px;
+    color: #fff;
+}
 
 @media (max-width: 1470px) {
 
@@ -850,7 +902,7 @@ nav .iconOpen{
         width: 258px;
     }
 
-    nav #searchAdvertisement_result {
+    nav #searchAdvertisement_result ,nav #searchLocation_result{
         width: 231px;
     }
 

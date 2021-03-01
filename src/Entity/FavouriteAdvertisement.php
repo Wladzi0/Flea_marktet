@@ -19,6 +19,7 @@ class FavouriteAdvertisement
 
     /**
      * @ORM\ManyToOne(targetEntity=Advertisement::class, inversedBy="favouriteAdvertisements")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $advertisement;
 

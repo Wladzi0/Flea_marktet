@@ -35,7 +35,7 @@ class StartPageController extends AbstractController
     }
 
     /**
-     * @Route("/search", name="search_posts", methods={"GET"})
+     * @Route("/search", name="search_advertisements", methods={"GET"})
      * @param Request $request
      * @return Response
      */
@@ -63,6 +63,34 @@ class StartPageController extends AbstractController
         return $realEntities;
     }
 
+    /**
+     * @Route("/searchLocation", name="search_location", methods={"GET"})
+     * @param Request $request
+     * @return Response
+     */
+
+    public function searchLocation(Request $request): Response
+    {
+        $em= $this->getDoctrine()->getManager();
+        $requestString = $request->get('searchLocation');
+        $locations= $em->getRepository(Advertisement::class)->findLocationByString($requestString);
+        if(!$locations){
+            $result['locations']['error']="Location not found ;(";
+        }
+        else{
+            $result['locations']=$this->getRealLocation($locations);
+        }
+        return new Response(json_encode($result));
+    }
+
+
+    public function getRealLocation($locations): array
+    {
+        foreach( $locations as $location){
+            $realLocation[$location->getId()]=[$location->getName()];
+        }
+        return $realLocation;
+    }
     /**
      * @Route("/searchByCategory", name="search_by_category", methods={"GET"})
      * @param Request $request
@@ -106,6 +134,22 @@ class StartPageController extends AbstractController
 
         return $this-> render('advertisement/index.html.twig',[
             'advertisements'=>$advertisements,
+        ]);
+    }
+    /**
+     * @Route ("/searchAllMatches", name="search_all_matches", methods={"GET"})
+     * @param Request $request
+     * @return Response
+     */
+    public function searchAction(Request $request): Response
+    {
+        $requestString = $request->get('search');
+        $em = $this->getDoctrine()->getManager();
+        $searchingResults = $em->getRepository(Advertisement::class)->findAdvertisementsByString($requestString);
+
+        return $this->render('advertisement/searchingPage.html.twig', [
+            'advertisements' => $searchingResults,
+            'searchingString'=> $requestString
         ]);
     }
 

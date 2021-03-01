@@ -43,7 +43,7 @@
                 </a></span>
 
 
-                    {% if app.user.id == myFavouriteAdvertisement.user.id %}
+                    {% if app.user.id == myFavouriteAdvertisement.advertisement.user.id %}
                         <div class="btns-user-options">
                             <a  class="edit btn-info" href="{{ path('edit_advertisement', {'id': myFavouriteAdvertisement.advertisement.id}) }}">
                                 <i class="fas fa-edit"></i>

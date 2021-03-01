@@ -14,6 +14,7 @@
         <script src="{{ asset('js/openSubcategory.js') }}"></script>
         <script src="{{ asset('js/openMobSearch.js') }}"></script>
         <script src="{{ asset('js/dropdown.js') }}"></script>
+        <script src="{{ asset('js/savedInput.js') }}"></script>
     {% endblock %}
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
@@ -30,17 +31,21 @@
     </div>
     {# searchAdvertisement field #}
     <div  id="searchAd"  class="input-group left-input desktop">
+        <form role="search" method="get" action="{{ path('search_all_matches') }}">
         <input id="search" type="text" autocomplete="off" placeholder="Search here" name="search">
         <ul id="searchAdvertisement_result"></ul>
+        </form>
     </div>
     {# searchAdvertisement field #}
 
     {# searchLocation_result field #}
     <div id="searchLo" class="input-group desktop">
-        <input type="text" id="place" placeholder="Enter place">
+
+        <input type="text"  id="place" placeholder="Enter place">
         <i id="searchIcon"  class="fas fa-search"></i>
         <i id="searchlocation" class="fas fa-map-marked-alt"></i>
-        {# <ul id="searchLocation_result" ></ul> #}
+         <ul id="searchLocation_result" ></ul>
+
     </div>
     {# searchLocation_result field #}
 

@@ -7,12 +7,34 @@
     <list default="true" id="e78e18bb-872f-4146-9d99-ad2f7ff84d71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/0faf38888aa38bf0e931b77bea5fbd7e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/1f63966c968db86664901aa0e2ff35c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/2b4aef26d57c78cd8722b5882b23b8c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/3cefd3eeae5f1013ed067fadaa8c311a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/452fb1212b24ec4c563e7278fb232f25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/4e7f3daaa5f9a95cf7ea8a257dcb2dcb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/60c6729f2e1d615761c75cd64543604b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/69f7317cec28cb46c7a04ada3c92fb0b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/8870f89a3ddaa8d0cefb8b12b73bab6e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/9f15ed52a88e7990dba704a999e53b74.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/a140316bcbaea27b021555d460f5f2e6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/b9666cf94ac9d657e7181c5261dc8ddd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/d03b796f07ca07bda6d43303b3d56eda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/dd3dbe5e60acbb5af4539d24723e4399.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/e52a7a63747a982f9f5fb543508639e2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/f9b2cf358468168b4f99c200b4f76b90.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/ff024059e9f267b7ac42c42714a8abdb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/searchAdvertisement.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/searchAdvertisement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdvertisementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdvertisementController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/StartPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StartPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/FavouriteAdvertisement.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FavouriteAdvertisement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/AdvertisementRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AdvertisementRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FavouriteAdvertisementRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FavouriteAdvertisementRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/advertisement/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/advertisement/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/advertisement/searchingPage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/searchingPage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/comment/showComments.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/comment/showComments.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/userMenu/myFavourite.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/userMenu/myFavourite.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +191,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/userMenu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/flea_market" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -217,7 +239,8 @@
       <workItem from="1614185907321" duration="7460000" />
       <workItem from="1614263824809" duration="13409000" />
       <workItem from="1614343113247" duration="27657000" />
-      <workItem from="1614514939608" duration="11820000" />
+      <workItem from="1614514939608" duration="22471000" />
+      <workItem from="1614619093135" duration="11016000" />
     </task>
     <servers />
   </component>
