@@ -7,7 +7,7 @@ window.onbeforeunload = function() {
 window.onload=function(){
     let search=localStorage.getItem("search");
     if (search !== null){
-        alert(searchlost);
+        // alert(searchlost);
         // $('#search').val(searchlost.val());
     }
 }

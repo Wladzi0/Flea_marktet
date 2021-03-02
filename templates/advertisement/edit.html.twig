@@ -7,8 +7,6 @@
     {% endblock %}
   {% block javascripts  %}
       {{ parent() }}
-      <script src="{{ asset('js/selectedImages_input.js') }}"></script>
-      <script src="{{ asset('js/deleteImageFromAdvertisement.js') }}"> </script>
   {% endblock %}
 {% block content %}
     <div class="new-advertisement">
@@ -32,7 +30,7 @@
 
         {% endif %}
 
-        <div  id="selectedImage"></div>
+
         <br><br>
         {{ form_label(advertisementForm.name) }}
         {{ form_widget(advertisementForm.name, {'attr': {'class': 'form-control'}}) }}
@@ -49,7 +47,7 @@
         {{ form_label(advertisementForm.contactName) }}
         {{ form_widget(advertisementForm.contactName, {'attr': {'class': 'form-control'}}) }}
 
-        <button  class="btn btn-success">Update</button>
+        <button  class="btn btn-success">{{ button_label|default('Update') }}</button>
         {{ form_end(advertisementForm) }}
 
     </div>

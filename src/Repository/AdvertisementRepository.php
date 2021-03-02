@@ -23,9 +23,9 @@ class AdvertisementRepository extends ServiceEntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT p
-                FROM App\Entity\Advertisement p
-                WHERE p.name LIKE :str OR p.description LIKE :str'
+                'SELECT a
+                FROM App\Entity\Advertisement a
+                WHERE a.name LIKE :str OR a.description LIKE :str'
             )
             ->setParameter('str', '%'.$str.'%')
             ->getResult();
@@ -37,6 +37,7 @@ class AdvertisementRepository extends ServiceEntityRepository
                 'SELECT a
                 FROM App\Entity\Advertisement a
                 WHERE a.name LIKE :chars'
+//                 WHERE a.name LIKE :chars OR a.description LIKE :chars'
             )
             ->setParameter('chars', '%' . $chars . '%')
             ->setMaxResults(20)

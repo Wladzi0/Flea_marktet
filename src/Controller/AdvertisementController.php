@@ -138,11 +138,12 @@ class AdvertisementController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete' . $advertisement->getId(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
-//            while($image->getAdvertisement() === $advertisement->getId()){
-//                $nameFile=$image->getName();
-//                unlink($this->getParameter('advertisement_images_directory').'/'.$nameFile);
-//                $em->remove(image);
-//            }
+            $images= $em->getRepository(Image::class)->findAllByAdvertisement($advertisement);
+            foreach($images as $image ){
+                $nameFile=$image->getName();
+                unlink($this->getParameter('advertisement_images_directory').'/'.$nameFile);
+
+            }
 
             $em->remove($advertisement);
             $em->flush();
@@ -210,7 +211,7 @@ class AdvertisementController extends AbstractController
             unlink($this->getParameter('advertisement_images_directory').'/'.$nameFile);
             //we delete the file from database
             $em=$this->getDoctrine()->getManager();
-            $em->persist($image);
+            $em->remove($image);
             $em->flush();
             return new JsonResponse(['success'=>1]);
         }else{

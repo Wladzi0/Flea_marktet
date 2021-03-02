@@ -24,7 +24,7 @@ $(document).ready(function() {
                                             entitySelector.append('<a   href="advertisement/'+id+'">' + searchString[0] +'</a>');
                                         }
                                         else {
-                                            entitySelector.append('<li><b> '+searchString+'</b></li>');
+                                            // entitySelector.append('<li><b> '+searchString+'</b></li>');
                                         }
                                     }
                                 });
