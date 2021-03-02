@@ -352,8 +352,41 @@ nav .iconOpen{
 
 .container-details .description-block {
    padding: 20px 100px 60px 60px;
+}.container-details .description-block .subcategory{
+     color:#808080;
+ }
+.container-details .block-function {
+    display: flex;
+    padding:10px 20px 10px 20px;
+    justify-content: space-between;
+    height: 20px;
+    text-align: center;
+    width: 16%;
+    position: absolute;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    right: 5px;
+    bottom: 155px;
 }
-
+.container-details .block-function #js-favourite:hover{
+    cursor:pointer;
+    animation: like 1s infinite forwards;
+}
+.container-details .block-function .delete{
+    color:deeppink;
+    width:30px;
+    height:30px;
+}
+.container-details .block-function #js-favourite {
+    position: absolute;
+    font-size:20px;
+    color: #eb3434;
+}
+.container-details .block-function .edit{
+    font-size:20px;
+    color: #ffa500;
+}
+.container-details .block-function
 .container-details .description-block strong {
     font-size: 28px;
 }
