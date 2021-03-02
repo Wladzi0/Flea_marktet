@@ -34,30 +34,38 @@ $(document).ready(function() {
                 });
         }
     });
-    $("#searchlocation").keyup(function() {
+    $("#place").keyup(function() {
         let minlength = 1;
-        let searchString = $(this).val();
-        let entitySelector = $("#searchLocation_result").html('');
-        if (searchString.length >= minlength) {
-            searchRequest = $.ajax({
+        let searchCityString = $(this).val();
+        let entitySel = $("#searchLocation_result").html('');
+        if (searchCityString.length >= minlength) {
+            searchCity = $.ajax({
                 type: "GET",
-                url: "/searchLocation",
+                url: "/searchAllMatchesLocation",
                 data: {
-                    'searchLocation': searchCity
+                    'searchLocation': searchCityString
                 },
                 dataType: "text",
                 async:true,
                 success: function(msg) {
                     let result = JSON.parse(msg);
                     $.each(result, function(key, arr) {
-                        $.each(arr, function(id, searchString) {
-                            if (key === 'location') {
+                        $.each(arr, function(id, searchCityString) {
+                            if (key === 'locations') {
                                 if (id !== 'error') {
-                                    // entitySelector.append('<li ><b>' + searchString[0] +'</li>');
-                                    entitySelector.append('<a   href="advertisement/'+id+'">' + searchString[0] +'</a>');
+
+                                    entitySel.append('<li value="'+searchCityString[0]+'" ><b>  ' + searchCityString[0] +'</b></li>');
+                                   $("li").on('click', function(){
+                                       let input = document.getElementById('place').value;
+                                       if(input !==''){
+
+                                           input=document.querySelector('li').getAttribute('value');
+                                           document.getElementById('place').value=input;
+                                       }
+                                   });
                                 }
                                 else {
-                                    entitySelector.append('<li><b> '+searchString+'</b></li>');
+                                    entitySel.append('<li><b> '+searchCityString+'</b></li>');
                                 }
                             }
                         });
@@ -67,4 +75,5 @@ $(document).ready(function() {
             });
         }
     });
+
 });

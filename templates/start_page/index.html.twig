@@ -25,9 +25,12 @@
                 <div class="card-image">
                     {% set mainPhoto = lastAdvertisement.images | first %}
                     {% if mainPhoto %}
-                        <img src="{{ asset('images/advertisementImages/'~ mainPhoto.name) }}"/><br>
+                        <a href="{{ path('advertisement_details', {'id': lastAdvertisement.id}) }}"><img  src="{{ asset('images/advertisementImages/'~ mainPhoto.name) }}"/></a>
+
                     {% else %}
-                        <img  src="{{ asset('images/advertisementImages/defaultFirst.jpg') }}"/><br>
+                        <a href="{{ path('advertisement_details', {'id': lastAdvertisement.id}) }}"><img  src="{{ asset('images/advertisementImages/defaultFirst.jpg') }}"/></a>
+
+                        <img  src="{{ asset('images/advertisementImages/defaultFirst.jpg') }}"/>
                     {% endif %}
                 </div>
                 <div class="card-text">
@@ -68,7 +71,7 @@
                         </form>
                     </div>
                 {% endif %}
-                <a class="details" href="{{ path('advertisement_details', {'id': lastAdvertisement.id}) }}">Details &nbsp  <i class="fas fa-arrow-right"></i></a>
+
                 <div class="line">
                     <h4 >
                         {{lastAdvertisement.createdAt|date("d/m/Y") }}

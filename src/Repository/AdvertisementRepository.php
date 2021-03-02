@@ -19,6 +19,18 @@ class AdvertisementRepository extends ServiceEntityRepository
         parent::__construct($registry, Advertisement::class);
     }
 
+    public function findAdvertisementsByLocation($location)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT a
+                FROM App\Entity\Advertisement a
+                WHERE a.location LIKE :location'
+            )
+            ->setParameter('location', '%' . $location . '%')
+            ->setMaxResults(20)
+            ->getResult();
+    }
     public function findAdvertisementsByString($str)
     {
         return $this->getEntityManager()
@@ -40,20 +52,6 @@ class AdvertisementRepository extends ServiceEntityRepository
 //                 WHERE a.name LIKE :chars OR a.description LIKE :chars'
             )
             ->setParameter('chars', '%' . $chars . '%')
-            ->setMaxResults(20)
-            ->getResult();
-
-    }
-
-    public function findLocationByString($location)
-    {
-        return $this->getEntityManager()
-            ->createQuery(
-                'SELECT 
-                FROM App\Entity\Advertisement a
-                WHERE a.name LIKE :chars'
-            )
-            ->setParameter('chars', '%' . $location . '%')
             ->setMaxResults(20)
             ->getResult();
 

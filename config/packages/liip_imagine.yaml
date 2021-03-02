@@ -2,7 +2,12 @@
 liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
-#    filter_sets:
+    filter_sets:
+#        cropImage:
+#            filters:
+#                crop:
+#                    size: [ 100, 100 ]
+#                    start: [ 100, 160 ]
 #        standard:           #name of the filter
 #            quality: 100     #quality of the image
 #            filters:

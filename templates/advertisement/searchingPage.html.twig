@@ -11,10 +11,18 @@
     {% set countResult = advertisements | length %}
     {% if countResult < 1 %}
         <h2 class="count-Adv">
-            No founded results  :( &nbsp;  with such text "{{ searchingString }}"</h2><br>
+            No founded results  :( &nbsp;
+
+            with such text "{{ searchingString }}"
+
+        </h2><br>
     {% else %}
         <h2 class="count-Adv">
-            Found results ({{ countResult }}) &nbsp;  with such text "{{ searchingString }}"
+            Found results ({{ countResult }}) &nbsp;
+    {% set searchingStringLength = searchingString | length %}
+    {% if searchingStringLength > 0 %}
+        with such text "{{ searchingString }}"
+    {% endif%}
         </h2><br>
     {% endif %}
     <div class="list-of-advertisements full-screen">
@@ -23,9 +31,9 @@
                 <div class="card-image">
                     {% set mainPhoto = advertisement.images | first %}
                     {% if mainPhoto %}
-                        <img src="{{ asset('images/advertisementImages/'~ mainPhoto.name) }}"/><br>
+                        <a href="{{ path('advertisement_details', {'id': advertisement.id}) }}"> <img src="{{ asset('images/advertisementImages/'~ mainPhoto.name) }}"/></a>
                     {% else %}
-                        <img  src="{{ asset('images/advertisementImages/defaultFirst.jpg') }}"/><br>
+                        <a href="{{ path('advertisement_details', {'id': advertisement.id}) }}">  <img  src="{{ asset('images/advertisementImages/defaultFirst.jpg') }}"/></a>
                     {% endif %}
                 </div>
                 <div class="card-text">
@@ -66,7 +74,6 @@
                         </form>
                     </div>
                 {% endif %}
-                <a class="details" href="{{ path('advertisement_details', {'id': advertisement.id}) }}">Details &nbsp  <i class="fas fa-arrow-right"></i></a>
                 <div class="line">
                     <h4 >
                         {{advertisement.createdAt|date("d/m/Y") }}
@@ -79,5 +86,9 @@
 
         {% endfor %}
     </div>
+    {% block javascriptblock %}
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="{{ asset('js/like.js') }}"></script>
+    {% endblock %}
 
 {% endblock %}

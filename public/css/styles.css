@@ -182,7 +182,7 @@ nav #searchAdvertisement_result a, nav #searchAdvertisement_result li, nav #sear
     color: #FFFFFF;
 }
 
-nav #searchAdvertisement_result a:hover {
+nav #searchAdvertisement_result a:hover, nav #searchLocation_result li:hover {
     background-color: #e1f1f2;
     color: #000000;
     padding-left: 12px;
@@ -433,7 +433,7 @@ nav .iconOpen{
     margin-top: 20px;
 }
 
-.new-advertisement .form-horizontal .form-images {
+.new-advertisement .form-horizontal .form-images{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -647,11 +647,11 @@ nav .iconOpen{
     margin-top: 30px;
     margin-left: 40px;
     margin-bottom: 50px;
-    width: 300px;
+    width: 280px;
     transition: all .2s ease-in-out;
     display: flex;
     flex-direction: column;
-    height: 440px;
+    height: 400px;
     background-color: #fff;
     border-radius: 18px;
     box-shadow: 2px 2px 8px 3px gray;
@@ -660,13 +660,14 @@ nav .iconOpen{
 
 }.list-of-advertisements .card .card-image{
      overflow:hidden;
-    height:200px;
+     height:280px;
      border-top-left-radius: 18px;
      border-top-right-radius: 18px;
  }
 
 .list-of-advertisements .card .card-image img{
     width:305px;
+   height:280px;
     transition: all .5s ease-in-out;
 
 }
@@ -674,52 +675,38 @@ nav .iconOpen{
     transform: scale(1.2);
 
 }
-.list-of-advertisements .card .card-text h4{
- margin-left: 20px;
-}
+
 .list-of-advertisements .card .card-text p{
     position:absolute;
+    padding:0;
     width: 100%;
-    top:240px;
+    top:295px;
     margin-left:20px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 600;
     color:  #000000;
-}
-.list-of-advertisements .card .details{
-    overflow:hidden;
-    display:flex;
-    width:200px;
-    justify-content:center;
-    margin:70px auto 0 auto;
-    border-radius:10px;
-    padding:10px 30px 10px 30px;
-    background:#27c8e8;
-    color: white;
-}
-.list-of-advertisements .card .details:not(hover){
-    transition: 1s;
-}
-.list-of-advertisements .card .details:hover{
-    transition: 1s;
-    background-color:#509FC7;
 }
 .list-of-advertisements a{
     color: #0a0a0a;
     text-decoration: none;
 }
 .list-of-advertisements .card .card-text .title{
-    font-size:22px;
-    margin-top:10px;
+    position:absolute;
+    font-size: 18px;
+    font-weight:500;
+    margin-left: 20px;
+    margin-top:20px;
+
 }
 .list-of-advertisements .card  .line{
     margin-left:20px;
-    /*margin-top: 30px;*/
     margin-right:20px;
-
     display:flex;
     justify-content: space-between;
     flex-direction:row;
+    margin-top: 80px;
+    color:#808080;
+    padding:0;
 }
 .list-of-advertisements .card .btns-user-options .btn-danger{
     background-color: #FFFFFF;
@@ -737,7 +724,7 @@ nav .iconOpen{
 .list-of-advertisements .card .btns-user-options .edit{
     padding:0;
     position:absolute;
-    top:265px;
+    top:320px;
     right:75px;
     color: #e8b527;
     font-size: 22px;
@@ -754,7 +741,7 @@ nav .iconOpen{
 .list-of-advertisements .card #js-favourite{
     position: absolute;
     color:#eb3434;
-    top: 265px;
+    top: 320px;
     font-size: 22px;
     right:25px;
 }
@@ -853,8 +840,8 @@ nav .iconOpen{
     position: relative;
     display:flex;
     flex-direction:row;
-    width:250px;
-    height:250px;
+    width:350px;
+    height:350px;
     border-radius: 20px;
     margin-right:40px;
     margin-bottom:20px;
@@ -877,9 +864,13 @@ nav .iconOpen{
 .new-advertisement .form-images .image-block a i {
     font-size: 30px;
 }
-.new-advertisement .form-images .image-block img {
-    width: 250px;
-    height: 250px;
+.new-advertisement .form-images .image-block img{
+    width: 350px;
+    height: 350px;
+}
+.new-advertisement .form-images #selectedImage img{
+    width: 350px;
+    height: 350px;
 }
 .full-screen{
     margin-left: 70px;

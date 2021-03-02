@@ -64,34 +64,6 @@ class StartPageController extends AbstractController
     }
 
     /**
-     * @Route("/searchLocation", name="search_location", methods={"GET"})
-     * @param Request $request
-     * @return Response
-     */
-
-    public function searchLocation(Request $request): Response
-    {
-        $em= $this->getDoctrine()->getManager();
-        $requestString = $request->get('searchLocation');
-        $locations= $em->getRepository(Advertisement::class)->findLocationByString($requestString);
-        if(!$locations){
-            $result['locations']['error']="Location not found ;(";
-        }
-        else{
-            $result['locations']=$this->getRealLocation($locations);
-        }
-        return new Response(json_encode($result));
-    }
-
-
-    public function getRealLocation($locations): array
-    {
-        foreach( $locations as $location){
-            $realLocation[$location->getId()]=[$location->getName()];
-        }
-        return $realLocation;
-    }
-    /**
      * @Route("/searchByCategory", name="search_by_category", methods={"GET"})
      * @param Request $request
      * @return Response
@@ -144,8 +116,15 @@ class StartPageController extends AbstractController
     public function searchAction(Request $request): Response
     {
         $requestString = $request->get('search');
+        $requestStringCity=$request->get('place');
         $em = $this->getDoctrine()->getManager();
-        $searchingResults = $em->getRepository(Advertisement::class)->findAdvertisementsByString($requestString);
+        if($requestString){
+            $searchingResults = $em->getRepository(Advertisement::class)->findAdvertisementsByString($requestString);
+        }
+        if($requestStringCity){
+            $searchingResults = $em->getRepository(Advertisement::class)->findAdvertisementsByLocation($requestStringCity);
+        }
+
 
         return $this->render('advertisement/searchingPage.html.twig', [
             'advertisements' => $searchingResults,
@@ -153,5 +132,30 @@ class StartPageController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route ("/searchAllMatchesLocation", name="search_all_matches_location", methods={"GET"})
+     * @param Request $request
+     * @return Response
+     */
+    public function searchByLocation(Request $request): Response
+    {
+        $requestString = $request->get('searchLocation');
+        $em = $this->getDoctrine()->getManager();
+        $locations = $em->getRepository(Advertisement::class)->findAdvertisementsByLocation($requestString);
+        if(!$locations){
+            $result['locations']['error']="Location not found :(";
+        }
+        else{
+            $result['locations']=$this->getRealLocation($locations);
+        }
+        return new Response(json_encode($result));
+    }
+    public function getRealLocation($locations): array
+    {
+        foreach( $locations as $location){
+            $realLocation[$location->getId()]=[$location->getLocation()];
+        }
+        return $realLocation;
+    }
 
 }

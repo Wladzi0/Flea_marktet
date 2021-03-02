@@ -26,7 +26,9 @@ class AdvertisementType extends AbstractType
             ])
             ->add('name', TextType::class,[
                 'required' => true,
-                'label'=>"Title"
+                'label'=>"Title",
+                'attr'=>['min_length' => 3,
+                    ],
             ])
             ->add('description', TextareaType::class,[
                 'required' => true,

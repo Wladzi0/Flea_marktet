@@ -22,6 +22,7 @@ class CommentRepository extends ServiceEntityRepository
         public function findLastComments($advertisement){
         $query=$this->createQueryBuilder('c')
             ->where('c.advertisement= :advertisement')
+            ->orderBy('c.id','DESC')
             ->setParameter('advertisement', $advertisement);
             return $query->getQuery()->getResult();
 

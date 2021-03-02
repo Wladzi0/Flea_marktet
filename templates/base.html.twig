@@ -31,7 +31,7 @@
     </div>
     {# searchAdvertisement field #}
     <div  id="searchAd"  class="input-group left-input desktop">
-        <form role="search" method="get" action="{{ path('search_all_matches') }}">
+        <form  method="get" action="{{ path('search_all_matches') }}">
         <input id="search" type="text" autocomplete="off" placeholder="Search here" name="search">
         <ul id="searchAdvertisement_result"></ul>
         </form>
@@ -40,12 +40,12 @@
 
     {# searchLocation_result field #}
     <div id="searchLo" class="input-group desktop">
-
-        <input type="text"  id="place" placeholder="Enter place">
+        <form role="search" aria-label="place" method="get" action="{{ path('search_all_matches') }}">
+        <input type="text"  id="place" autocomplete="off" placeholder="Enter place" name="place">
         <i id="searchIcon"  class="fas fa-search"></i>
         <i id="searchlocation" class="fas fa-map-marked-alt"></i>
          <ul id="searchLocation_result" ></ul>
-
+        </form>
     </div>
     {# searchLocation_result field #}
 
