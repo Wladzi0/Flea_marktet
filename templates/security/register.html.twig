@@ -8,8 +8,6 @@
 
 {% block body %}
 
-
-
 	<div class="form-register">
 		{% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
 		{% if formErrors | length %}
@@ -24,15 +22,15 @@
 		<h1 >Create new account</h1>
 				{{ form_start(registrationForm, {'attr': {'class': 'form-horizontal'}}) }}
 				{{ form_label(registrationForm.firstName) }}<br>
-				{{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control'}}) }}<br>
+				{{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control', 'required': 'true'}}) }}<br>
 				{{ form_label(registrationForm.lastName) }}<br>
-				{{ form_widget(registrationForm.lastName, {'attr': {'class': 'form-control'}}) }}<br>
+				{{ form_widget(registrationForm.lastName, {'attr': {'class': 'form-control', 'required': 'true'}}) }}<br>
 				{{ form_label(registrationForm.email) }}<br>
-				{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}<br>
+				{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control','required': 'true'}}) }}<br>
 				{{ form_label(registrationForm.plainPassword.first) }}<br>
-				{{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'form-control'}}) }}<br>
+				{{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'form-control', 'required': 'true'}}) }}<br>
 				{{ form_label(registrationForm.plainPassword.second) }}<br>
-				{{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+				{{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'form-control', 'required': 'true'}}) }}
 				<button  class="btn registration top" type="submit">
 					Sign up
 				</button>

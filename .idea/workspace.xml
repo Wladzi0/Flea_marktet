@@ -7,8 +7,19 @@
     <list default="true" id="e78e18bb-872f-4146-9d99-ad2f7ff84d71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/advertisement/advertisementDetails.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/advertisementDetails.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/searchAdvertisement.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/searchAdvertisement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/showAllAdverComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/showAllAdverComments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Advertisement.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Advertisement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/advertisement/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/advertisement/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/advertisement/searchingPage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/advertisement/searchingPage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/favourite_advertisement/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/start_page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/start_page/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/userMenu/myAdvertisements.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/userMenu/myAdvertisements.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/userMenu/myFavourite.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/userMenu/myFavourite.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/userMenu/personalDataEdit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/userMenu/personalDataEdit.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +235,9 @@
       <workItem from="1614514939608" duration="22471000" />
       <workItem from="1614619093135" duration="11324000" />
       <workItem from="1614679694423" duration="16910000" />
-      <workItem from="1614705623786" duration="13397000" />
+      <workItem from="1614705623786" duration="13542000" />
+      <workItem from="1614721349870" duration="431000" />
+      <workItem from="1614769853196" duration="6422000" />
     </task>
     <servers />
   </component>

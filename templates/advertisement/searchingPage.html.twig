@@ -9,17 +9,18 @@
 
 {% block content %}
     {% set countResult = advertisements | length %}
+    {% set searchingStringLength = searchingString | length %}
     {% if countResult < 1 %}
         <h2 class="count-Adv">
             No founded results  :( &nbsp;
-
-            with such text "{{ searchingString }}"
-
+            {% if searchingStringLength > 0 %}
+                with such text "{{ searchingString }}"
+            {% endif%}
         </h2><br>
     {% else %}
         <h2 class="count-Adv">
             Found results ({{ countResult }}) &nbsp;
-    {% set searchingStringLength = searchingString | length %}
+
     {% if searchingStringLength > 0 %}
         with such text "{{ searchingString }}"
     {% endif%}

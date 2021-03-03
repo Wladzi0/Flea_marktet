@@ -11,8 +11,16 @@
 
 {% block content %}
     <div class="new-advertisement">
-
         <h2>Create new advertisement</h2>
+        {% set formErrors = advertisementForm.vars.errors.form.getErrors(true) %}
+        {% if formErrors | length %}
+
+        <ul>
+            {% for error in formErrors %}
+                <li>{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
         {{ form_start(advertisementForm, {'attr': {'class': 'form-horizontal'}}) }}
         {{ form_label(advertisementForm.image) }}
         {{ form_widget(advertisementForm.image, {'attr': {'class': 'form-images'}}) }}

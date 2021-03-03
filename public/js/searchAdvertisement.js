@@ -58,9 +58,9 @@ $(document).ready(function() {
                                    $("li").on('click', function(){
                                        let input = document.getElementById('place').value;
                                        if(input !==''){
-
                                            input=document.querySelector('li').getAttribute('value');
                                            document.getElementById('place').value=input;
+                                           document.getElementById('place').focus();
                                        }
                                    });
                                 }

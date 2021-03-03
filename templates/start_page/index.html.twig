@@ -5,9 +5,15 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/dynamicDeleteAdvertisement.js') }}"></script>
 {% endblock %}
 {% block content %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="alert alert-{{ type }} alert-dismissible" role="alert">
+                {{ message | raw }}
+            </div>
+        {% endfor %}
+    {% endfor %}
     <div class="side-nav">
         {% for category in categories %}
             <a  class="subcategory-list" data-value="{{ category.id}}">

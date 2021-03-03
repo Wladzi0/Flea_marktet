@@ -77,7 +77,6 @@ class Advertisement
 
     /**
      * @ORM\Column(type="integer", length=9)
-     *  @Assert\Length(min = 9, max = 9, minMessage = "min_lenght", maxMessage = "max_lenght")
      * @Assert\Regex(pattern="/[0-9]/", message="number_only")
      */
     private $telNumber;

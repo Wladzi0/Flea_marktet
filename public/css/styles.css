@@ -587,6 +587,19 @@ nav .iconOpen{
     justify-content: center;
 
 }
+.form-register ul,.new-advertisement ul{
+    padding-left: 10px;
+    list-style-type: none;
+  background-color:#ff0000;
+}
+.new-advertisement ul{
+    width: 46%;
+    margin-left: 80px;
+}
+.form-register ul li,.new-advertisement ul li{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 .form-register .top {
     margin-top: 30px;
@@ -656,22 +669,24 @@ nav .iconOpen{
     padding: 20px;
     background-color: #e31b44;
 }
-.form-signIn .alert-success {
+.alert-success {
+    display: flex;
     font-size: 15px;
     padding: 20px;
-    background-color:#34ba2b;
+    background-color: #34ba2b;
+    color: #FFFFFF;
 }
 .list-of-advertisements{
     margin-left: 30px;
+    margin-bottom:40px;
     margin-top: 40px;
     border-radius: 3px;
     min-height: 600px;
     position: relative;
     display:flex;
-    width: 66%;
+    width: 70%;
     flex-direction:row;
     flex-wrap: wrap;
-    height:200px;
     float: left;
     border: 1px solid #FFFFFF;
 }

@@ -33,6 +33,8 @@ $(document).ready(function(){
                 async: true,
                 success:function(data){
 
+                    document.getElementById('commentContent').value="";
+
                     let result= JSON.parse(data);
 
                     $.each(result,function(key,arr){
