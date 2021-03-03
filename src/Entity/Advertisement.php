@@ -28,12 +28,16 @@ class Advertisement
     private $subcategory;
 
     /**
+     *
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length( min=3, minMessage="The title must have at least {{ limit }} characters.")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=10000)
+     * @Assert\Length( min=10, minMessage="The description must have at least {{ limit }} characters.")
+     *
      */
     private $description;
 
@@ -77,6 +81,7 @@ class Advertisement
 
     /**
      * @ORM\Column(type="integer", length=9)
+     * @Assert\Length(min = 9, max = 9, minMessage = "min_lenght", maxMessage = "max_lenght")
      * @Assert\Regex(pattern="/[0-9]/", message="number_only")
      */
     private $telNumber;
