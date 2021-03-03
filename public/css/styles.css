@@ -830,7 +830,13 @@ nav .iconOpen{
     padding: 5px 10px 5px 10px;
     border:1px solid #32a88f;
     border-radius:3px;
+    transition: all 0.5s ease;
 
+}
+.comments-content #comment-form #submit:hover{
+    cursor:pointer;
+    background-color:#147dc2;
+    border:1px solid #147dc2;
 }
 .data-block{
     padding: 40px;

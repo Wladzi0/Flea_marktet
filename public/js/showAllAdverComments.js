@@ -19,13 +19,12 @@ $(document).ready(function(){
         });
     $('#submit').click(function() {
         let formData = $("#commentContent").val();
-
         if(formData===''){
             formData.val('');
         }
         else {
             $.ajax({
-                url:'/advertisement/'+advertisement+'/comment',
+                url:'/advertisement/'+advertisement+'/addComment',
                 method:'POST',
                 data: {
                     'comment':formData
@@ -37,10 +36,9 @@ $(document).ready(function(){
 
                     let result= JSON.parse(data);
 
-                    $.each(result,function(key,arr){
-                        $.each(arr,function(id,data){
+                    $.each(result,function(id,data){
                             displayComment.append('<div class="fieldComment"><h3><b> '+data[0]+'</b></h3><small>'+data[1]+'</small> <p>'+data[2]+'</p></div>');
-                        });
+
                     });
 
                 }

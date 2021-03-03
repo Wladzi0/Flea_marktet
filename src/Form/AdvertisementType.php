@@ -23,12 +23,12 @@ class AdvertisementType extends AbstractType
                 'mapped'=>false,
 
 
+
             ])
             ->add('name', TextType::class,[
                 'required' => true,
                 'label'=>"Title",
-                'attr'=>['min_length' => 3,
-                    ],
+
             ])
             ->add('description', TextareaType::class,[
                 'required' => true,
