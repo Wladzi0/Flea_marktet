@@ -5,19 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e78e18bb-872f-4146-9d99-ad2f7ff84d71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Flea_market.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Flea_market.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdvertisementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdvertisementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/0cdfd52f92760566e145ce131701d822.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/23b224fa4f9cf2e3349df339ce7a8921.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/2cae05503a1dfd11c480b5f1f982e1ba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/37902b7d73de4d4fb85652d6e33a3d37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/3fb046bb0fdf0859a8c9f70cc09ab6de.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/5bfd805dea399d4e8408224046d55555.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/5fc135038a29572ecd5558e932c73933.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/6e9e8ad5ca8716ff72831e5cacbc404c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/86bbc34d1ff1e5b1b2f5bfde0cffb98b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/90da88c20ea69abf47895d586bc33d61.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/a10592f6461d0e148d02b869ec0d5730.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/ac867223d97639a874fdbe12ea460d13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/advertisementImages/b5c89d097353d7f11afa1b3423dcdba6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Advertisement.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Advertisement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/City.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +186,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/flea_market" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/EasyAdminBundle" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -192,10 +199,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/EasyAdminBundle" />
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/templates/userMenu" />
       <recent name="$PROJECT_DIR$/templates/security" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/EasyAdminBundle" />
       <recent name="$PROJECT_DIR$/templates/userMenu" />
     </key>
   </component>
@@ -239,7 +249,7 @@
       <workItem from="1614705623786" duration="13542000" />
       <workItem from="1614721349870" duration="431000" />
       <workItem from="1614769853196" duration="21897000" />
-      <workItem from="1614932317327" duration="5866000" />
+      <workItem from="1614932317327" duration="15677000" />
     </task>
     <servers />
   </component>

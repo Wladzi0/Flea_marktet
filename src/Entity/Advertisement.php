@@ -8,9 +8,12 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Entity\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=AdvertisementRepository::class)
+ * @Vich\Uploadable
  */
 class Advertisement
 {
@@ -63,6 +66,12 @@ class Advertisement
      *
      */
     private $images;
+
+    /**
+     * @Vich\UploadableField(mapping="advertisement_images", fileNameProperty="images")
+     * @var File
+     */
+    private $imageFile;
 
     /**
      * @ORM\ManyToOne (targetEntity=User::class, inversedBy="advertisements")
@@ -136,6 +145,20 @@ class Advertisement
         $this->contactName = $contactName;
     }
 
+    public function getImageFile(): ?string
+    {
+        return $this->images;
+    }
+
+    public function addImageFile(Image $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setAdvertisement($this);
+        }
+
+        return $this;
+    }
     /**
      * @return Collection|Image[]
      */
