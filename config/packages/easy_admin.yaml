@@ -1,0 +1,76 @@
+easy_admin:
+  design:
+    brand_color: '#1ABC9C'
+    menu:
+      - { label: 'Panel of control content'}
+      - label: 'Categories'
+        children:
+          - { entity: Category, label: 'List of categories', icon: 'th-list' }
+          - { entity: Category, label: 'Add new category', icon: 'plus', params: { action: 'new' }}
+
+      - label: 'Advertisements'
+        children:
+          - { entity: Advertisement, label: 'List of advertisements', icon: 'clipboard' }
+          - { entity: Advertisement, label: 'Add new advertisement', icon: 'plus', params: { action: 'new' }}
+      - { label: 'Panel of user`s settings'  }
+      - label: 'Users'
+        children:
+          - { entity: User, label: 'List of users', icon: 'user' }
+          - { entity: User, label: 'Add new user', icon: 'plus', params: { action: 'new' }}
+
+  site_name:
+    'Admin Control Panel'
+  user:
+    display_name: true
+    display_avatar: true
+  entities:
+    #        # List the entity class name you want to manage
+    Category:
+      class: App\Entity\Category
+      label: 'Category'
+      form:
+        fields:
+          - { type: 'group', icon: 'pencil', label: 'Basic information' }
+          - { property: 'name', label: 'Title'}
+          - icon
+      list:
+        collapse_actions: true
+        actions: ['show','edit', 'delete' ]
+        batch_actions: ['delete']
+        title: "All categories"
+        filters: [ 'name', 'advertisements' ]
+    Advertisement:
+      class: App\Entity\Advertisement
+      label: 'Advertisement'
+      form:
+        fields:
+          - { type: 'group', icon: 'pencil', label: 'Basic information', css_class: 'col-lg-5' }
+          - { property: 'name', label: 'Title'}
+          - category
+          - { property: 'description', type: 'text_editor' }
+          - price
+          - { type: 'group', icon: 'image', label: 'Other data',css_class: 'col-lg-7'}
+          - images
+          - createdAt
+          - updatedAt
+          - { type: 'group', icon: 'user', label: 'Information about user' }
+          - user
+          - contact_name
+      list:
+        collapse_actions: true
+        actions: ['show', 'edit', 'delete' ]
+        batch_actions: ['delete']
+        title: "All advertisements"
+        filters: [ 'category', 'price', 'createdAt', 'updatedAt' ]
+    Image:
+      class: App\Entity\Image
+      label: 'Image'
+    User:
+      class: App\Entity\User
+      label: 'User'
+      form:
+      list:
+        collapse_actions: true
+        actions: ['show','edit', 'delete' ]
+        batch_actions: ['delete']
+        title: "All users"

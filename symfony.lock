@@ -1,4 +1,7 @@
 {
+    "alterphp/easyadmin-extension-bundle": {
+        "version": "v3.1.2"
+    },
     "behat/transliterator": {
         "version": "v1.3.0"
     },
@@ -97,13 +100,17 @@
         "version": "1.1.1"
     },
     "easycorp/easyadmin-bundle": {
-        "version": "3.0",
+        "version": "2.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.0",
-            "ref": "b131e6cbfe1b898a508987851963fff485986285"
-        }
+            "version": "2.0",
+            "ref": "0a51040a43c6f2172a3a0135cd15daf2043905d7"
+        },
+        "files": [
+            "config/packages/easy_admin.yaml",
+            "config/routes/easy_admin.yaml"
+        ]
     },
     "egulias/email-validator": {
         "version": "2.1.25"
@@ -150,6 +157,9 @@
     },
     "nikic/php-parser": {
         "version": "v4.10.4"
+    },
+    "pagerfanta/pagerfanta": {
+        "version": "v2.7.1"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
@@ -423,9 +433,6 @@
     "symfony/polyfill-php80": {
         "version": "v1.22.0"
     },
-    "symfony/polyfill-uuid": {
-        "version": "v1.22.1"
-    },
     "symfony/process": {
         "version": "v5.2.3"
     },
@@ -532,9 +539,6 @@
     },
     "symfony/twig-pack": {
         "version": "v1.0.1"
-    },
-    "symfony/uid": {
-        "version": "v5.2.4"
     },
     "symfony/validator": {
         "version": "4.3",

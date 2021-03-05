@@ -13,7 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=AdvertisementRepository::class)
- * @Vich\Uploadable
+ * @Vich\Uploadable()
  */
 class Advertisement
 {
@@ -69,7 +69,7 @@ class Advertisement
 
     /**
      * @Vich\UploadableField(mapping="advertisement_images", fileNameProperty="images")
-     * @var File
+     *
      */
     private $imageFile;
 
@@ -150,14 +150,12 @@ class Advertisement
         return $this->images;
     }
 
-    public function addImageFile(Image $image): self
+    public function setImageFile(?File $imageFile): self
     {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
-            $image->setAdvertisement($this);
+        $this->imageFile=$imageFile;
+        if($imageFile){
+            $this->updatedAt=new \DateTime();
         }
-
-        return $this;
     }
     /**
      * @return Collection|Image[]
