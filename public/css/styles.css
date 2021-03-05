@@ -351,6 +351,7 @@ nav .iconOpen{
 }
 
 .container-details .description-block {
+    width: 70%;
    padding: 20px 100px 60px 60px;
 }.container-details .description-block .subcategory{
      color:#808080;
@@ -934,6 +935,142 @@ nav .iconOpen{
 .count-Adv{
     margin:0 0 -30px 70px;
     color: #fff;
+}
+footer{
+    padding-top: 30px;
+    margin-top: 30px;
+    width: 100%;
+    background-color: #2e2d2d;
+    min-height: 120px;
+    bottom: 0;
+    display: flex;
+    flex-direction:row;
+    color:#FFFFFF;
+}
+footer a{
+    font-size: 17px;
+}
+footer .firstPart{
+    margin-left: 130px;
+    margin-right: 160px;
+    display:flex;
+    flex-direction:column;
+}
+footer .firstPart .social-btns{
+    margin-top:20px;
+    display:flex;
+    flex-direction:row;
+}
+footer .firstPart .social-btns a{
+    color: #FFFFFF;
+    margin-right:30px;
+}
+footer .firstPart .social-btns a i{
+font-size:24px;
+}
+footer .secondPart {
+    color: #FFFFFF;
+    margin-right: 160px;
+    display: flex;
+    flex-direction:column;
+}
+footer .thirdPart{
+    color: #FFFFFF;
+    display: flex;
+    flex-direction:column;
+}
+footer .thirdPart a{
+    margin-bottom: 20px;
+    text-transform:uppercase;
+    padding-top:5px;
+    padding-bottom: 5px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+footer .thirdPart a{
+    transition: 0.2s ease-in;
+    border-bottom: 1px solid #2e2d2d;
+}
+footer .thirdPart a:hover{
+    text-shadow: 1px 1px beige;
+    border-bottom: 1px solid #87CEFA;
+}
+footer .secondPart .mailHid{
+    display:none;
+}
+footer .secondPart .mail:hover .mailHid {
+    color: #87CEFA;
+    display: inline;
+}
+footer .secondPart .mail:hover .mailAct {
+    display: none;
+}
+footer .secondPart a{
+    margin-bottom:20px;
+    padding-bottom:5px;
+    padding-top:5px;
+    text-decoration: none;
+    color: #fff3d9;
+}
+footer .firstPart .social-btns .btn-social i:hover {
+    color: #fff;
+    text-shadow: 0 0 25px blue, 0 5px 5px red;
+    animation: anime 1s 1;
+}
+
+@keyframes anime {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+footer .secondPart .help-center:hover i{
+    color: #87CEFA;
+    animation: help 1s 1;
+}
+footer .secondPart .help-center:hover {
+    cursor: pointer;
+}
+
+@keyframes help {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+footer .secondPart .phone:hover i {
+    color: #87CEFA;
+    animation: phone 0.2s 3;
+}
+@keyframes phone {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-15deg);
+    }
 }
 
 @media (max-width: 1470px) {

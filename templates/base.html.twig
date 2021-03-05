@@ -50,7 +50,7 @@
     {# searchLocation_result field #}
 
     <ul class="links">
-        <li><a class="active" href="">Home</a></li>
+        <li><a href="{{ path('start_page') }}">Home</a></li>
         <li><a href="">News</a></li>
         <li><a href="">Contact</a></li>
         <li><a href="">About</a></li>
@@ -97,43 +97,44 @@
         </div>
     </div>
 </nav>
-{#<footer>#}
-{#    <div class="firstPart">#}
-{#        <p>follow us</p>#}
-{#        <div class="social-btns">#}
-{#            <a class="btn-social" href="https://www.facebook.com/" target="_blank">#}
-{#                <i class="fab fa-facebook-square"></i>#}
-{#            </a>#}
-{#            <a class="left btn-social" href="https://www.instagram.com/?hl=pl" target="_blank">#}
-{#                <i class="fab fa-instagram"></i>#}
-{#            </a>#}
-{#            <a class="left btn-social" href="https://twitter.com/twitter" target="_blank">#}
-{#                <i class="fab fa-twitter"></i>#}
-{#            </a>#}
-{#        </div>#}
-{#    </div>#}
-{#    <div class="secondPart">#}
-{#        <p>contact us</p>#}
-{#        <a class="phone" href="tel: +48595555331">#}
-{#            <i class=" phoneAct fas fa-phone-alt"></i>&nbsp; +48 595 555 331</a>#}
-{#        <a class="mail" href="mailto: example@gmail.com">#}
-{#            <i class="mailAct far fa-envelope"></i><i class="mailHid far fa-envelope-open"></i>&nbsp; example@gmail.com</a>#}
-{#        <a class="help-center" id="openMessage"><i class="fas fa-headset"></i>&nbsp; Help center</a>#}
-{#        <script src="{{ asset('js/messageForm.js') }}"></script>#}
-{#    </div>#}
-
-{#    <div class="thirdPart">#}
-{#        <a href="">home#}
-{#        </a>#}
-{#        <a href="">news</a>#}
-{#        <a href="">about us</a>#}
-{#        <a href="">help center</a>#}
-{#    </div>#}
-
-{#</footer>#}
 
 </body>
 
 {% block content %} {% endblock %}
+{% block footer %}
+<footer>
+    <div class="firstPart">
+        <h3>Follow us</h3>
+        <div class="social-btns">
+            <a class="btn-social" href="https://www.facebook.com/" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a class="left btn-social" href="https://www.mailHidinstagram.com/?hl=pl" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="left btn-social" href="https://twitter.com/twitter" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+    <div class="secondPart">
+        <h3>Contact us</h3>
+        <a class="phone" href="tel: +48595555331">
+            <i class=" phoneAct fas fa-phone-alt"></i>&nbsp; +48 595 555 331</a>
+        <a class="mail" href="mailto: example@gmail.com">
+            <i class="mailAct far fa-envelope"></i><i class="mailHid far fa-envelope-open"></i>&nbsp; example@gmail.com</a>
+        <a class="help-center" id="openMessage"><i class="fas fa-headset"></i>&nbsp; Help center</a>
+{#        <script src="{{ asset('js/messageForm.js') }}"></script>#}
+    </div>
+
+    <div class="thirdPart">
+        <a href="{{ path('start_page') }}">home</a>
+        <a href="">news</a>
+        <a href="">about us</a>
+        <a href="">help center</a>
+    </div>
+
+</footer>
+{% endblock %}
 
 </html>

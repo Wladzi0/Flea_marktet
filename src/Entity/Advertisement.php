@@ -60,7 +60,7 @@ class Advertisement
 
     /**
      * @ORM\OneToMany(targetEntity=Image::class, mappedBy="advertisement", orphanRemoval=true, cascade={"persist"})
-     * @Assert\File(maxSize = "12000k")
+     *
      */
     private $images;
 

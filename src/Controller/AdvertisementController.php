@@ -119,7 +119,8 @@ class AdvertisementController extends AbstractController
                 ->getFlashBag()
                 ->add('success', 'Your advertisement has been edited successfully ');
 
-            return $this->redirectToRoute('start_page');
+
+            return $this->redirectToRoute($request->get('_route'));
         }
 
         return $this->render('advertisement/edit.html.twig', [
