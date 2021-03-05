@@ -1,6 +1,6 @@
 easy_admin:
   design:
-    brand_color: '#1ABC9C'
+    brand_color: '#3b3b3b'
     menu:
       - { label: 'Panel of control content'}
       - label: 'Categories'
@@ -38,7 +38,7 @@ easy_admin:
         actions: ['show','edit', 'delete' ]
         batch_actions: ['delete']
         title: "All categories"
-        filters: [ 'name', 'advertisements' ]
+        filters: [ 'name' ]
     Advertisement:
       class: App\Entity\Advertisement
       label: 'Advertisement'
@@ -46,22 +46,22 @@ easy_admin:
         fields:
           - { type: 'group', icon: 'pencil', label: 'Basic information', css_class: 'col-lg-5' }
           - { property: 'name', label: 'Title'}
-          - category
+          - subcategory
           - { property: 'description', type: 'text_editor' }
           - price
           - { type: 'group', icon: 'image', label: 'Other data',css_class: 'col-lg-7'}
-          - images
+#          - images
           - createdAt
           - updatedAt
           - { type: 'group', icon: 'user', label: 'Information about user' }
-          - user
+#          - user
           - contact_name
       list:
         collapse_actions: true
         actions: ['show', 'edit', 'delete' ]
         batch_actions: ['delete']
         title: "All advertisements"
-        filters: [ 'category', 'price', 'createdAt', 'updatedAt' ]
+        filters: [ 'subcategory', 'price', 'createdAt', 'updatedAt' ]
     Image:
       class: App\Entity\Image
       label: 'Image'
