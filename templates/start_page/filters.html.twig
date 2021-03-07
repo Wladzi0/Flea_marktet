@@ -1,0 +1,10 @@
+<h2 for="" class="filters">Filters</h2>
+{{ form_start(searchForm,{'attr': {'class': 'filters'}} )}}
+<h2 for="" class="price">Price</h2>
+<div class="line-min-max">
+{{ form_label(searchForm.min) }}
+{{ form_widget(searchForm.min) }}
+{{ form_label(searchForm.max) }}
+{{ form_widget(searchForm.max) }}
+</div>
+{{ form_end(searchForm) }}

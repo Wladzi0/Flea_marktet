@@ -11,11 +11,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/transliterator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/stof/doctrine-extensions-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-time-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/imagine/imagine" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/liip/imagine-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/alterphp/easyadmin-extension-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easycorp/easyadmin-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/pagerfanta/pagerfanta" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/webpack-encore-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

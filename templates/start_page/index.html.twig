@@ -23,6 +23,7 @@
         {% endfor %}
     </div>
     <div id="searchByCategory"></div>
+    {% include 'start_page/filters.html.twig' with {searchForm: searchForm} only %}
     <div class="list-of-advertisements">
         {% if lastAdvertisements  %}
         {% for lastAdvertisement in lastAdvertisements %}
@@ -92,6 +93,7 @@
         {% endfor %}
         {% endif %}
     </div>
+
 {% block javascriptblock %}
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="{{ asset('js/like.js') }}"></script>

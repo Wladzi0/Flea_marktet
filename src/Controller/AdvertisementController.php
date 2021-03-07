@@ -24,16 +24,16 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdvertisementController extends AbstractController
 {
-    /**
-     *
-     * @Route("/advertisement", name="advertisement")
-     */
-    public function index(): Response
-    {
-        return $this->render('advertisement/index.html.twig', [
-            'controller_name' => 'AdvertisementController',
-        ]);
-    }
+//    /**
+//     *
+//     * @Route("/advertisement", name="advertisement")
+//     */
+//    public function index(): Response
+//    {
+//        return $this->render('advertisement/index.html.twig', [
+//            'controller_name' => 'AdvertisementController',
+//        ]);
+//    }
 
     /**
      * @Route ("/{id}", name="advertisement_details", methods={"GET","POST"}, requirements={"id"="\d+"})

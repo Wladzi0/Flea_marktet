@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Data\SearchData;
 use App\Entity\Advertisement;
 use App\Entity\Category;
 use App\Entity\Subcategory;
+use App\Form\SearchForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,6 +26,8 @@ class StartPageController extends AbstractController
      */
     public function index(Request $request): Response
     {
+        $data=new SearchData();
+        $searchForm=$this->createForm(SearchForm::class,$data);
         $em=$this->getDoctrine()->getManager();
         $categories =$em->getRepository(Category::class)->FindAll();
         $advertisementRepo = $em->getRepository(Advertisement::class);
@@ -31,6 +35,7 @@ class StartPageController extends AbstractController
         return $this->render('start_page/index.html.twig', [
             'categories' => $categories,
             'lastAdvertisements' => $lastAdvertisements,
+            'searchForm'=>$searchForm->createView(),
         ]);
     }
 
