@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\FavouriteAdvertisement;
+use App\Repository\FavouriteAdvertisementRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,16 +17,16 @@ class FavouriteAdvertisementController extends AbstractController
 {
     /**
      * @Route("/favourite/advertisement", name="favourite_advertisement_list")
+     * @param FavouriteAdvertisementRepository $favouriteAdvertisementRepository
      * @param UserInterface $user
      * @return Response
      */
-    public function index(UserInterface $user): Response
+    public function index(FavouriteAdvertisementRepository $favouriteAdvertisementRepository,UserInterface $user): Response
     {
         $userId= $user->getId();
-        $em= $this->getDoctrine()->getManager();
-        $myfavouriteAdvertisements=$em->getRepository(FavouriteAdvertisement::class)->findAllFavouriteAdvertisementByUser($user);
+        $myFavouriteAdvertisements=$favouriteAdvertisementRepository->findAllFavouriteAdvertisementByUser($user);
         return $this->render('favourite_advertisement/index.html.twig', [
-            'favouriteAdvertisement' => 'FavouriteAdvertisement',
+            'favouriteAdvertisement' => $myFavouriteAdvertisements,
         ]);
     }
 }

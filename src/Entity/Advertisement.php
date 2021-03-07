@@ -67,11 +67,11 @@ class Advertisement
      */
     private $images;
 
-    /**
-     * @Vich\UploadableField(mapping="advertisement_images", fileNameProperty="images")
-     *
-     */
-    private $imageFile;
+//    /**
+//     * @Vich\UploadableField(mapping="advertisement_images", fileNameProperty="images")
+//     *
+//     */
+//    private $imageFile;
 
     /**
      * @ORM\ManyToOne (targetEntity=User::class, inversedBy="advertisements")
@@ -145,18 +145,18 @@ class Advertisement
         $this->contactName = $contactName;
     }
 
-    public function getImageFile(): ?string
-    {
-        return $this->images;
-    }
-
-    public function setImageFile(?File $imageFile): self
-    {
-        $this->imageFile=$imageFile;
-        if($imageFile){
-            $this->updatedAt=new \DateTime();
-        }
-    }
+//    public function getImageFile(): ?string
+//    {
+//        return $this->images;
+//    }
+//
+//    public function setImageFile(?File $imageFile): self
+//    {
+//        $this->imageFile=$imageFile;
+//        if($imageFile){
+//            $this->updatedAt=new \DateTime();
+//        }
+//    }
     /**
      * @return Collection|Image[]
      */

@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Advertisement;
 use App\Entity\FavouriteAdvertisement;
 use App\Form\AccountDataType;
+use App\Repository\AdvertisementRepository;
+use App\Repository\FavouriteAdvertisementRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -81,14 +83,14 @@ class AccountMenuController extends AbstractController
 
     /**
      * @Route ("/myAdvertisements", name="my_advertisements", methods={"GET"})
+     * @param AdvertisementRepository $advertisementRepositoryRequest
      * @param Request $request
      * @param UserInterface $user
      * @return Response
      */
-    public function showMyAdbert(Request $request, UserInterface $user): Response
+    public function showMyAdbert(AdvertisementRepository $advertisementRepositoryRequest, Request $request, UserInterface $user): Response
     {
-        $em=$this->getDoctrine()->getManager();
-        $userAdvertisements= $em->getRepository(Advertisement::class)->findAllUserAdv($user);
+        $userAdvertisements= $advertisementRepositoryRequest->findAllUserAdv($user);
         return $this-> render('userMenu/myAdvertisements.html.twig',[
             'userAdvertisements'=>$userAdvertisements,
         ]);
@@ -96,13 +98,15 @@ class AccountMenuController extends AbstractController
 
     /**
      * @Route ("/myFavouriteAdvertisements", name="favourite_advertisements")
+     * @param FavouriteAdvertisementRepository $favouriteAdvertisementRepository
+     * @param UserInterface $user
      * @return Response
      */
-    public function myFavourite(UserInterface $user): Response
+    public function myFavourite(FavouriteAdvertisementRepository $favouriteAdvertisementRepository, UserInterface $user): Response
     {
         $userId = $user->getId();
-        $entityManager=$this->getDoctrine()->getManager();
-        $myFavouriteAdvertisements=$entityManager->getRepository(FavouriteAdvertisement::class)->findAllFavouriteAdvertisementByUser($userId);
+
+        $myFavouriteAdvertisements=$favouriteAdvertisementRepository->findAllFavouriteAdvertisementByUser($userId);
 
         return $this->render('userMenu/myFavourite.html.twig',[
             'user'=>$userId,
